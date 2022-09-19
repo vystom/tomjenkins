@@ -5,8 +5,8 @@ pipeline {
       steps {
         script {
          sh "ls -l"
-         sh "chmod 777 Ahoj_GitLAB.pl"
-         sh "./Ahoj_GitLAB.pl"
+         sh "chmod 777 perl1.pl"
+         sh "./perl1.pl"
         }
         echo "Uzivatel: ${env.USERNAME}"
         echo "Heslo: ${env.PASSWORD}"
