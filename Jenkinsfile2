@@ -22,3 +22,4 @@ node {
     currentBuild.displayName = "${NAME} #${BUILD_NUMBER}"
     
     }
+//nepouzivat Jenkinsfile2 nestahne vse z repo, takze jen Jenkinsfile!!!!!!
