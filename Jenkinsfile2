@@ -20,3 +20,5 @@ node {
     
     NAME = "Tomino"
     currentBuild.displayName = "${NAME} #${BUILD_NUMBER}"
+    
+    }
