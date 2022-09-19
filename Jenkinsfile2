@@ -1,0 +1,25 @@
+node {
+    stage ('Git HUb') {
+    //         git branch: 'main', url: 'hhttps://github.com/vystom/tomjenkins.git'
+    git branch: 'main', url: 'https://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@github.com/vystom/tomjenkins.git'
+     }
+    
+   //stage('Pulling the repo') {
+   //       git 'https://github.com/vystom/tomjenkins.git'
+   //     poll: true
+   //    }
+    stage('nastavim prava') {
+        sh "ls -l perl*"
+        sh "chmod 777 perl1.pl"
+        sh "ls -l perl*"
+    }
+    stage('nic nedelam') {
+        echo 'Deploying....'
+    }
+    stage('Pozdrav') {
+        sh script: "./perl1.pl"
+        //sh script: "./home/tomino/tomrepo2/pozdrav.pl"
+    }
+    
+    NAME = "Tomino"
+    currentBuild.displayName = "${NAME} #${BUILD_NUMBER}"
