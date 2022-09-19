@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+  stages {
+    stage ("Spoustim perl") {
+      steps {
+        script {
+         sh "ls -l"
+         sh "chmod 777 Ahoj_GitLAB.pl"
+         sh "./Ahoj_GitLAB.pl"
+        }
+        echo "Uzivatel: ${env.USERNAME}"
+        echo "Heslo: ${env.PASSWORD}"
+      }
+    }
+  }
+}
+
