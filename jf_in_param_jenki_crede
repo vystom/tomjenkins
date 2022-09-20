@@ -1,15 +1,20 @@
 #!groovy
 
-withCredentials([usernamePassword(credentialsId: 'sbserv_testy_id', usernameVariable: 'uziv', passwordVariable: 'hesl')]) {
-            sh "echo user z credent ${uziv}"
-            //sh "sshpass -p ${PSW} ssh ${uzivatel}@localhost"
-            //println "sshpass -p ${PSW} ssh ${uzivatel}@localhost"
-            //"'''+ _Connect +'''" @${WORKSPACE}/sb-generate.sql '''
-        }   
+w 
 
 pipeline {
   agent any
   stages {
+    
+    stage ("nacitam hesla zcredials") {
+        ithCredentials([usernamePassword(credentialsId: 'sbserv_testy_id', usernameVariable: 'uziv', passwordVariable: 'hesl')]) {
+            sh "echo user z credent ${uziv}"
+            //sh "sshpass -p ${PSW} ssh ${uzivatel}@localhost"
+            //println "sshpass -p ${PSW} ssh ${uzivatel}@localhost"
+            //"'''+ _Connect +'''" @${WORKSPACE}/sb-generate.sql '''
+        }  
+    }
+
     stage ("Spoustim perl") {
       steps {
         script {
@@ -21,5 +26,6 @@ pipeline {
         //echo "Heslo: ${env.PASSWORD}"
       }
     }
+    
   }
 }
