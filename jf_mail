@@ -6,7 +6,7 @@ body="telo mailu"
 body = '<pre>\n' + body + '\n</pre>'
 println(body)
 
-SUBJEKT="predmet zpravy"
+SUBJECT=predmetzparvy //predmet zpravy je param v jenkins jako choice
 
 
 def sendMail() {
@@ -41,7 +41,7 @@ pipeline {
         }
       }     
 
-      stage("process data") {
+      stage("posli mail") {
         steps {
           //timeout(time: 5, unit: "MINUTES") {
           script {
