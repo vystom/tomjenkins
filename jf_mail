@@ -12,12 +12,10 @@ println "predmet pred pipelinou = " + predmetparam
 
 
 def sendMail() {
-
-
-from = 'vystom@centrum.cz'
-//to = "vystom@centrum.cz, csrychta@gmail.com, cc:vystom1612@gmail.com"
-to = "vystom@centrum.cz"
-body = """${body}
+    from = 'vystom@centrum.cz'
+    //to = "vystom@centrum.cz, csrychta@gmail.com, cc:vystom1612@gmail.com" 
+    to = "vystom@centrum.cz"
+    body = """${body}
         """
 
         emailext (
@@ -61,13 +59,13 @@ pipeline {
           script {
             mail(
                 bcc: '',
-                body: "<p>your body</p>",
+                body: "<h2>Ahoj, zdravim te z Jenkins</h2>",
                 cc: '',
                 charset: 'UTF-8',
-                from: 'vystom@centrum.cz',
+                from: 'Jenkins <vystom@centrum.cz>',
                 mimeType: 'text/html',
                 replyTo: 'vystom@centrum.cz',
-                subject: "your subject",
+                subject: predmetparam,
                 to: "csrychta@gmail.com"
             )
           }
