@@ -15,7 +15,7 @@ def sendMail() {
 
 
 from = 'vystom@centrum.cz'
-to = "vystom@centrum.cz, csrychta@gmail.com, cc:vystom1612k@gmail.com"
+to = "vystom@centrum.cz, csrychta@gmail.com, cc:vystom1612@gmail.com"
 body = """${body}
         """
 
@@ -54,7 +54,23 @@ pipeline {
           } 
         }
       } 
-    }  
+
+      stage("posli mail 2.zpusob") {
+        steps {
+          mail(
+            bcc: '',
+            body: "<p>your body</p>",
+            cc: '',
+            charset: 'UTF-8',
+            from: '',
+            mimeType: 'text/html',
+            replyTo: '',
+            subject: "your subject",
+            to: "csrychta@gmail.com"
+          )
+
+    } 
+
 }
   
 
