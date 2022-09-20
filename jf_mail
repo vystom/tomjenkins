@@ -6,12 +6,12 @@ body="telo mailu"
 body = '<pre>\n' + body + '\n</pre>'
 println(body)
 
-SUBJECT=predmetzparvy //predmet zpravy je param v jenkins jako choice
-
+//predmet = predmetzparvy //predmet zpravy je param v jenkins jako choice
+predmet="predmet zpravy"
 
 def sendMail() {
 
-subject = SUBJECT
+subject = predmet
 from = 'vystom@centrum.cz'
 to = "vystom@centrum.cz, csrychta@gmail.com, cc:vystom1612k@gmail.com"
 body = """${body}
