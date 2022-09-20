@@ -7,11 +7,13 @@ body = '<pre>\n' + body + '\n</pre>'
 println(body)
 
 //predmet = predmetzparvy //predmet zpravy je param v jenkins jako choice
-predmet="predmet zpravy"
+//predmet="predmet zpravy"
+println "predmet pred pipelinou = " + predmetparam
+
 
 def sendMail() {
 
-subject = predmet
+
 from = 'vystom@centrum.cz'
 to = "vystom@centrum.cz, csrychta@gmail.com, cc:vystom1612k@gmail.com"
 body = """${body}
@@ -44,6 +46,7 @@ pipeline {
       stage("posli mail") {
         steps {
           //timeout(time: 5, unit: "MINUTES") {
+          subject = predmetparam //predmetparam je param z jenkinsnu  
           script {
             sendMail()
           } 
