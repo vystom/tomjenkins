@@ -57,18 +57,21 @@ pipeline {
 
       stage("posli mail 2.zpusob") {
         steps {
-          mail(
-            bcc: '',
-            body: "<p>your body</p>",
-            cc: '',
-            charset: 'UTF-8',
-            from: '',
-            mimeType: 'text/html',
-            replyTo: '',
-            subject: "your subject",
-            to: "csrychta@gmail.com"
-          )
+          script {
+            mail(
+                bcc: '',
+                body: "<p>your body</p>",
+                cc: '',
+                charset: 'UTF-8',
+                from: '',
+                mimeType: 'text/html',
+                replyTo: '',
+                subject: "your subject",
+                to: "csrychta@gmail.com"
+            )
+          }
         }
+      }
 
     } 
 
