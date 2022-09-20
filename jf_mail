@@ -15,7 +15,8 @@ def sendMail() {
 
 
 from = 'vystom@centrum.cz'
-to = "vystom@centrum.cz, csrychta@gmail.com, cc:vystom1612@gmail.com"
+//to = "vystom@centrum.cz, csrychta@gmail.com, cc:vystom1612@gmail.com"
+to = "vystom@centrum.cz"
 body = """${body}
         """
 
@@ -63,9 +64,9 @@ pipeline {
                 body: "<p>your body</p>",
                 cc: '',
                 charset: 'UTF-8',
-                from: '',
+                from: 'vystom@centrum.cz',
                 mimeType: 'text/html',
-                replyTo: '',
+                replyTo: 'vystom@centrum.cz',
                 subject: "your subject",
                 to: "csrychta@gmail.com"
             )
