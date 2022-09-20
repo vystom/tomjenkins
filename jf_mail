@@ -46,8 +46,10 @@ pipeline {
       stage("posli mail") {
         steps {
           //timeout(time: 5, unit: "MINUTES") {
-          subject = predmetparam //predmetparam je param z jenkinsnu  
+          
           script {
+            //predmetparam je param z jenkinsnu  
+            subject = predmetparam 
             sendMail()
           } 
         }
