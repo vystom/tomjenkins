@@ -26,7 +26,7 @@ pipeline {
          //sh "echo user z credent ${uziv}"
          sh "./perl_in_param.pl ${j_db} ${j_schema} ${uziv} ${hesl}"
         }
-        currentBuild.displayName = "${j_db}/{$j_schema} #${BUILD_NUMBER} ${env.BUILD_STATUS}" 
+        script {currentBuild.displayName = "${j_db}/{$j_schema} #${BUILD_NUMBER} ${env.BUILD_STATUS}" }
       }
         
     }
