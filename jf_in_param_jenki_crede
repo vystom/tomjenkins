@@ -22,7 +22,7 @@ pipeline {
         script {
          sh "ls -l"
          sh "chmod 777 perl_in_param.pl "
-         sh "./perl_in_param.pl ${j_db} ${j_schema} uziv hesl"
+         sh "./perl_in_param.pl ${j_db} ${j_schema} ${uziv} ${hesl}"
         }
         //echo "Uzivatel: ${env.USERNAME}"
         //echo "Heslo: ${env.PASSWORD}"
