@@ -25,7 +25,7 @@ pipeline {
          sh "chmod 777 perl_in_param.pl "
          //sh "echo user z credent ${uziv}"
          sh "./perl_in_param.pl ${j_db} ${j_schema} ${uziv} ${hesl}"
-         uziv2=uziv
+         uziv2=${uziv}
         }
       }
         
