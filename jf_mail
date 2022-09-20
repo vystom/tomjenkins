@@ -60,7 +60,7 @@ pipeline {
             mail(
                 bcc: '',
                 body: "<h2>Ahoj, zdravim te z Jenkins</h2>",
-                cc: '',
+                cc: 'vystom@centrum.cz',
                 charset: 'UTF-8',
                 from: 'Jenkins <vystom@centrum.cz>',
                 mimeType: 'text/html',
