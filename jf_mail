@@ -31,7 +31,8 @@ body = """${body}
 pipeline { 
     agent any
    
-          
+    stages {
+
       stage("priprava neceho") {
           steps { 
             script { 
@@ -48,6 +49,7 @@ pipeline {
           } 
         }
       } 
+    }  
 }
   
 
