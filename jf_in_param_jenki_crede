@@ -29,8 +29,10 @@ pipeline {
       }
         
     }
-  //currentBuild.displayName = "${j_db}/{$j_schema} pod ${uziv} #${BUILD_NUMBER} #${BUILD_STATUS}"
+  
   }
 
   
 }
+
+currentBuild.displayName = "${j_db}/{$j_schema} pod ${uziv} #${BUILD_NUMBER} ${env.BUILD_STATUS}"
