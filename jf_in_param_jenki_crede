@@ -1,0 +1,25 @@
+#!groovy
+
+withCredentials([usernamePassword(credentialsId: 'sbserv_testy_id', usernameVariable: 'uziv', passwordVariable: 'hesl')]) {
+            sh "echo user z credent ${uziv}"
+            //sh "sshpass -p ${PSW} ssh ${uzivatel}@localhost"
+            //println "sshpass -p ${PSW} ssh ${uzivatel}@localhost"
+            //"'''+ _Connect +'''" @${WORKSPACE}/sb-generate.sql '''
+        }   
+
+pipeline {
+  agent any
+  stages {
+    stage ("Spoustim perl") {
+      steps {
+        script {
+         sh "ls -l"
+         sh "chmod 777 perl_in_param.pl "
+         sh "./perl_in_param.pl j_db j_schema ${uziv} ${hesl}"
+        }
+        //echo "Uzivatel: ${env.USERNAME}"
+        //echo "Heslo: ${env.PASSWORD}"
+      }
+    }
+  }
+}
