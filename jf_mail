@@ -1,105 +1,19 @@
 #!groovy
 
-CREDENTIALS_ID='sbserv_t'
-SSH_OPTS = "-o StrictHostKeyChecking=no -o ConnectTimeout=60"
-DOMAIN = '.vs.csin.cz'
 
-def cmdSSH(target, command) {
-  // execute command on remote over ssh
-  // arguments: target = remote host
-  //            command = command to execute
-  withCredentials([sshUserPrivateKey(credentialsId: CREDENTIALS_ID, keyFileVariable: 'ssh_key', passphraseVariable: '', usernameVariable: 'ssh_user')]) {
-  println('')
-  println('[INFO]: running "' + command + '" on ' + target)
-  println('')
-  TARGET = target + DOMAIN
-  CONNECT_STRING = " -i ${ssh_key} ${ssh_user}@" + TARGET
-  COMMAND = ' "' + command + '"'
-  COMMAND_TO_RUN = 'ssh ' + SSH_OPTS + CONNECT_STRING + COMMAND
+//body = readFile 'out.html'
+body="telo mailu"
+body = '<pre>\n' + body + '\n</pre>'
+println(body)
 
-  // ssh -o StrictHostKeyChecking=no -o ConnectTimeout=60 -i {key} {user}@dsb1t "hostname" 
-  cmdSSH = COMMAND_TO_RUN
-  do_cmdSSH = sh (script: cmdSSH , returnStdout: true)
-  }
-}
-
-def copySCP(target, direction, filename, local_path, remote_path) {
-  withCredentials([sshUserPrivateKey(credentialsId: CREDENTIALS_ID, keyFileVariable: 'ssh_key', passphraseVariable: '', usernameVariable: 'ssh_user')]) {
-
-  FILENAME = filename
-  TARGET = target + DOMAIN + ':'
-  DIRECTION = direction
-  LOCAL_PATH = local_path
-  REMOTE_PATH = remote_path
-
-try {
-  if(DIRECTION == 'from_local') {
-    println('')
-    println('[INFO]: copying ' + LOCAL_PATH + FILENAME + ' to ' + TARGET + REMOTE_PATH)
-    println('')
-    COMMAND_TO_RUN = 'scp ' + SSH_OPTS + ' -i ${ssh_key}' + ' ' + LOCAL_PATH + FILENAME + ' ${ssh_user}@' + TARGET + REMOTE_PATH
-  } 
-  else if(DIRECTION == 'from_remote') {
-    println('')
-    println('[INFO]: copying ' + TARGET + REMOTE_PATH + FILENAME + ' to ' + LOCAL_PATH)
-    println('')
-    COMMAND_TO_RUN = 'scp ' + SSH_OPTS + ' -i ${ssh_key}' + '  ${ssh_user}@' + TARGET + REMOTE_PATH + FILENAME + ' ' + LOCAL_PATH
-  }
-  
-  } catch(Exception e)  {
-      println('Error: ' + e)
-      system.exit(1)
-  }
-
-  copySCP = COMMAND_TO_RUN
-  do_copySCP = sh (script: copySCP , returnStdout: true)
-  }
-}
-
-def processData() {
-
-  try {
-
-    body = readFile 'out.html'
-    body = '<pre>\n' + body + '\n</pre>'
-  
-SUBJECT_TEXT_DEFAULT = "DEV: CLONE STATUS "
-SUBJECT_TEXT = ""
-
-body.split('\n').each { line ->
-    if (line.contains('ERROR')) {
-      if (SUBJECT_TEXT.contains('SD')) {
-          SUBJECT_TEXT += '|' + line.replaceAll(/<\/.*/,'').replaceAll(/.*.>/,'')
-        } else {
-             SUBJECT_TEXT += line.replaceAll(/<\/.*/,'').replaceAll(/.*.>/,'')
-    }
-}}
-
-if (SUBJECT_TEXT.contains('SD')) {
-SUBJECT_TEXT = 'ERROR: [' + SUBJECT_TEXT + ']'
-   } else {
-   SUBJECT_TEXT = 'OK' 
-}
-
-SUBJECT = SUBJECT_TEXT_DEFAULT + SUBJECT_TEXT
-
-
-  } catch(Exception e) { 
-      println('Error: ' + e)
-      system.exit(1)
-  }
-  
-  println(body)
-
-}
-
+SUBJEKT="predmet zpravy"
 
 
 def sendMail() {
 
 subject = SUBJECT
-from = 'TEAM AS Core Starbank <as_core@csas.cz>'
-to = "as_core@csas.cz, sb_dev@csas.cz, cc:jandvorak@csas.cz"
+from = 'vystom@centrum.cz'
+to = "vystom@centrum.cz, csrychta@gmail.com, cc:vystom1612k@gmail.com"
 body = """${body}
         """
 
@@ -115,51 +29,26 @@ body = """${body}
  
 
 pipeline { 
-    agent { label 'test' }
-        triggers { cron('H 6 * * *') } // +1 (cest)
-    options { 
-        disableConcurrentBuilds()
-        ansiColor('xterm') 
-        }
-    environment {
-        SERVER = 'dsb1t'         
-    }
-    stages {
-      
-      stage("prepare resources") {
+    agent any
+   
+          
+      stage("priprava neceho") {
           steps { 
-          script { 
-            cmdSSH(SERVER, 'rm -f /tmp/get_clone_status_new.sh')
-            
-            cmdSSH(SERVER, 'rm -f /tmp/create_mail_plaintext.py')
-            copySCP(SERVER, 'from_local', 'get_clone_status_new.sh', './', '/tmp/')
-            copySCP(SERVER, 'from_local', 'create_mail_plaintext.py', './', '/tmp/')
-            cmdSSH(SERVER, 'chmod +x /tmp/get_clone_status_new.sh')
+            script { 
+              echo "ja jsem fiala tralal"
             }
         }
-      }
-      stage("get status") {
-          steps { 
-          script { 
-            cmdSSH(SERVER, 'exec /tmp/get_clone_status_new.sh')
+      }     
 
-            }
-        }
-      }
       stage("process data") {
         steps {
-          timeout(time: 5, unit: "MINUTES") {
+          //timeout(time: 5, unit: "MINUTES") {
+          script {
+            sendMail()
           } 
-   
-        script {
-          copySCP(SERVER, 'from_remote', 'out.html', './', '/tmp/')
-          processData()
-          sendMail()
-
-
-        } 
-        } 
-      }
-    }
-
+        }
+      } 
 }
+  
+
+
