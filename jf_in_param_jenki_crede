@@ -1,6 +1,6 @@
 #!groovy
 
- 
+def result = manager.build.result 
 
 pipeline {
   agent any
@@ -26,7 +26,7 @@ pipeline {
          //sh "echo user z credent ${uziv}"
          sh "./perl_in_param.pl ${j_db} ${j_schema} ${uziv} ${hesl}"
         }
-        script {currentBuild.displayName = "${j_db}/{$j_schema} #${BUILD_NUMBER} ${env.BUILD_STATUS}" }
+        script {currentBuild.displayName = "${j_db}/$j_schema #${BUILD_NUMBER} ${env.BUILD_STATUS} $result" }
       }
         
     }
