@@ -25,7 +25,8 @@ pipeline {
          sh "chmod 777 perl_in_param.pl "
          //sh "echo user z credent ${uziv}"
          sh "./perl_in_param.pl ${j_db} ${j_schema} ${uziv} ${hesl}"
-         sh "uziv2=${uziv}"
+         
+         currentBuild.displayName = "${j_db}/{$j_schema} pod ${uziv} #${BUILD_NUMBER} ${env.BUILD_STATUS}"
         }
       }
         
@@ -36,4 +37,4 @@ pipeline {
   
 }
 
-currentBuild.displayName = "${j_db}/{$j_schema} pod ${uziv2} #${BUILD_NUMBER} ${env.BUILD_STATUS}"
+
