@@ -16,7 +16,7 @@ pipeline {
                 
                 println "************************************************************************************"
                 
-                script {currentBuild.displayName = currentBuild.currentResult }
+                script {currentBuild.displayName = "  ${env.BUILD_ID} -  ${env.JOB_NAME} - ${currentBuild.currentResult} }
                 echo  "currentBuild.displayName = " + currentBuild.displayName
                 echo  "currentBuild.result = ${currentBuild.result}"
                 echo "currentBuild.getPreviousBuild().result =  " + currentBuild.getPreviousBuild().result
