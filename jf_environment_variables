@@ -18,7 +18,7 @@ pipeline {
                 
                 script {currentBuild.displayName = "uspech" }
                 echo  "currentBuild.displayName = " + currentBuild.displayName
-                echo  "currentBuild.Result = ${currentBuild.Result}"
+                echo  "currentBuild.result = ${currentBuild.result}"
                
             }
         }
