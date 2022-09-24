@@ -20,7 +20,7 @@ pipeline {
                 echo  "currentBuild.displayName = " + currentBuild.displayName
                 echo  "currentBuild.result = ${currentBuild.result}"
                 echo "currentBuild.getPreviousBuild().result =  " + currentBuild.getPreviousBuild().result
-                echo  "currentBuild.result = ${currentBuild.currentResult}" 
+                echo  "currentBuild.currentResult = ${currentBuild.currentResult}" 
                
             }
         }
