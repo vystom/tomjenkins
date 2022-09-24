@@ -17,8 +17,8 @@ pipeline {
                 println "************************************************************************************"
                 
                 currentBuild.displayName = "${BUILD_NUMBER} - pico" 
-                echo  "currentBuild.displayName = ${currentBuild.displayName}
-                echo  "currentBuild.result = ${currentBuild.result}
+                echo  "currentBuild.displayName = " +currentBuild.displayName
+                echo  "currentBuild.result = ${currentBuild.result}"
                
             }
         }
