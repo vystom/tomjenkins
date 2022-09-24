@@ -16,9 +16,9 @@ pipeline {
                 
                 println "************************************************************************************"
                 
-                script {currentBuild.displayName = "${BUILD_NUMBER}" }
-                echo  "currentBuild.displayName = " +currentBuild.displayName
-                echo  "currentBuild.result = ${currentBuild.result}"
+                script {currentBuild.displayName = "uspech" }
+                echo  "currentBuild.displayName = " +c urrentBuild.displayName
+                echo  "currentBuild.Result = ${currentBuild.Result}"
                
             }
         }
