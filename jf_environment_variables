@@ -16,7 +16,7 @@ pipeline {
                 
                 println "************************************************************************************"
                 
-                currentBuild.displayName = "${BUILD_NUMBER}" 
+                script {currentBuild.displayName = "${BUILD_NUMBER}" }
                 echo  "currentBuild.displayName = " +currentBuild.displayName
                 echo  "currentBuild.result = ${currentBuild.result}"
                
