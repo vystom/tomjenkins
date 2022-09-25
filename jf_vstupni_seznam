@@ -28,6 +28,17 @@ pipeline {
                                 defaultValue: 'blabla', 
                                 name: 'RETEZEC_01', 
                                 trim: true
+                            ),
+                            extendedChoice(
+                                name: 'vstupni_seznam', 
+                                defaultValue: 'Build & Deploy', 
+                                multiSelectDelimiter: ',', 
+                                quoteValue: false, 
+                                saveJSONParameterToFile: false, 
+                                type: 'PT_RADIO',
+                                value:'soubor 1, soubor 2, soubor3',
+                                visibleItemCount: 3,
+                                description: 'This is to describe the nature of the pipeline'
                             )
                         ])
                     ])
