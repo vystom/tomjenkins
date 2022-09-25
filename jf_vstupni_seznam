@@ -10,11 +10,13 @@ pipeline {
                                 choices: ['ONE', 'TWO'], 
                                 name: 'PARAMETER_01'
                             ),
+                            /*
                             booleanParam(
                                 defaultValue: true, 
                                 description: '', 
                                 name: 'logic_01'
                             ),
+                            */
                             text(
                                 defaultValue: '''
                                 toto je viceradkovy text
