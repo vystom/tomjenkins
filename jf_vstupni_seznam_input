@@ -32,6 +32,8 @@ pipeline {
                         print testParamValue.trim()
                     }
                     
+                    [testParamValues].each { print "$it" }
+                    
                 }
             }
         }
