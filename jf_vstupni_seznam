@@ -35,10 +35,10 @@ pipeline {
                                 multiSelectDelimiter: ',', 
                                 quoteValue: false, 
                                 saveJSONParameterToFile: false, 
-                                type: 'PT_RADIO',
+                                type: 'PT_MULTI_SELECT',
                                 value:'soubor 1, soubor 2, soubor3',
                                 visibleItemCount: 3,
-                                description: 'This is to describe the nature of the pipeline'
+                                description: 'Soubory PZ02 ke skopirovani'
                             )
                         ])
                     ])
@@ -50,9 +50,10 @@ pipeline {
             steps {
                 script {
                     println "vyber-choice = ${PARAMETER_01}" 
-                    println "logic_01' = ${logic_01}" 
+                    //println "logic_01' = ${logic_01}" 
                     println "viceradkovy text - TEXT_01' = ${textak_01}" 
                     println "RETEZEC_01' = ${RETEZEC_01}" 
+                    echo "Tvoje soubory ${vstupni_seznam}"
 
                 }
              }
