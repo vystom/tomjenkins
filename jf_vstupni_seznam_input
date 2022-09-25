@@ -37,11 +37,11 @@ pipeline {
                     [testParamValues].each { print "$it" }
                     */
                     
-                 def employee = ["Ken", "John", "Sally"]
-		               for(emp in employee) {
-                            	 println(emp);
-                       	       }
-                    
+                 employee = ["Ken", "John", "Sally"]
+		     for(emp in employee) {
+                     	 println(emp);
+                     }
+                   
                     
                 }
             }
