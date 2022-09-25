@@ -13,14 +13,14 @@ pipeline {
                             booleanParam(
                                 defaultValue: true, 
                                 description: '', 
-                                name: 'BOOLEAN_01'
+                                name: 'logic_01'
                             ),
                             text(
                                 defaultValue: '''
                                 toto je viceradkovy text
                                 parametr se jmenu text
                                 ''', 
-                                 name: 'TEXT_01'
+                                 name: 'textak_01'
                             ),
                             string(
                                 defaultValue: 'blabla', 
@@ -37,8 +37,8 @@ pipeline {
             steps {
                 script {
                     println "vyber-choice = ${PARAMETER_01}" 
-                    println "BOOLEAN_01' = ${BOOLEAN_01}" 
-                    println "viceradkovy text - TEXT_01' = ${TEXT_01}" 
+                    println "logic_01' = ${logic_01}" 
+                    println "viceradkovy text - TEXT_01' = ${textak_01}" 
                     println "RETEZEC_01' = ${RETEZEC_01}" 
 
                 }
