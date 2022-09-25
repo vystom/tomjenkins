@@ -24,7 +24,7 @@ pipeline {
                 script {
                     vstupni_seznam.eachLine { println "$it" }
                     //[vstupni_seznam].eachLine { println "$it" }
-                    [vstupni_seznam].each { println "$it" }
+                    [vstupni_seznam].each { print "$it" }
                 }
             }
         }
