@@ -23,7 +23,7 @@ pipeline {
                 echo "Tvoje soubory ${vstupni_seznam}"
                 script {
                     vstupni_seznam.eachLine { println "$it" }
-                    [vstupni_seznam].eachLine { println "$it" }
+                    //[vstupni_seznam].eachLine { println "$it" }
                     [vstupni_seznam].each { println "$it" }
                 }
             }
