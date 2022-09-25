@@ -30,6 +30,7 @@ pipeline {
                     
                     testParamValues.each { testParamValue ->
                         print testParamValue.trim()
+                    }
                     
                 }
             }
