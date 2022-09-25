@@ -4,8 +4,8 @@ pipeline {
     stage ("Vstupni hodnoty") {
       steps {
         script {
-          sh "echo 'user='${USERNAME} 'stroj='${HOSTNAME} 'pwd='${PWD}"
-        
+          //sh "echo 'user='${USERNAME} 'stroj='${HOSTNAME} 'pwd='${PWD}"
+          sh "echo users hostname pwd"
           env.USERNAME1 = input message: 'Zadej uzivatele',
                              parameters: [string(defaultValue: '',
                                           description: '',
