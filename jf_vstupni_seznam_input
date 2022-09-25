@@ -26,6 +26,8 @@ pipeline {
                     //[vstupni_seznam].eachLine { println "$it" }
                     [vstupni_seznam].each { print "$it" }
                     
+                    print params.vstupni_seznam
+                    string(name: 'vstupni_seznam', value: "${params.vstupni_seznam}")
                     def testParamValues = "${params.vstupni_seznam}".split(',')
                     
                     testParamValues.each { testParamValue ->
@@ -33,6 +35,8 @@ pipeline {
                     }
                     
                     [testParamValues].each { print "$it" }
+                    
+                    
                     
                 }
             }
