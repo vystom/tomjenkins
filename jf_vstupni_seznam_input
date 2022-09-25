@@ -4,7 +4,7 @@ pipeline {
         stage('Example') {
             input {
                 message "Vyber soubory ke kopirovani"
-                ok 'Release!'
+                ok 'Pokracuj'
                 parameters {
                     extendedChoice(
                                 name: 'vstupni_seznam', 
