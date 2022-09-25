@@ -5,11 +5,11 @@ pipeline {
       steps {
         script {
           //sh "echo 'user='${USERNAME} 'stroj='${HOSTNAME} 'pwd='${PWD}"
-          sh "echo users hostname pwd"
+          sh "users ; hostname ; pwd"
           
-          InetAddress addr = InetAddress.getLocalHost();
-          String hostname = addr.getHostName();
-          echo "stroj=${hostname}"
+          localhostname = java.net.InetAddress.getLocalHost().getHostName();
+          echo "stroj=${localhostname}"
+          
           env.USERNAME1 = input message: 'Zadej uzivatele',
                              parameters: [string(defaultValue: '',
                                           description: '',
