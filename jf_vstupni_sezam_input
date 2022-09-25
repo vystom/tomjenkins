@@ -6,11 +6,21 @@ pipeline {
                 message "Vyber soubory ke kopirovani"
                 ok 'Release!'
                 parameters {
-                    extendedChoice defaultValue: 'blue,green,yellow,blue', description: '', descriptionPropertyValue: 'blue,green,yellow,blue', multiSelectDelimiter: ',', name: 'favColor', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_MULTI_SELECT', value: 'blue,green,yellow,blue', visibleItemCount: 5
+                    extendedChoice(
+                                name: 'vstupni_seznam', 
+                                defaultValue: 'Build & Deploy', 
+                                multiSelectDelimiter: ',', 
+                                quoteValue: false, 
+                                saveJSONParameterToFile: false, 
+                                type: 'PT_MULTI_SELECT',
+                                value:'soubor 1, soubor 2, soubor3',
+                                visibleItemCount: 3,
+                                description: 'Soubory PZ02 ke skopirovani'
+                            )
                 }
             }
             steps {
-                echo "Your favorite color is ${favColor}"
+                echo "Tvoje soubory ${vstupni_seznam}"
             }
         }
     }
