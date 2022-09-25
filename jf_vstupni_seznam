@@ -6,6 +6,10 @@ pipeline {
         script {
           //sh "echo 'user='${USERNAME} 'stroj='${HOSTNAME} 'pwd='${PWD}"
           sh "echo users hostname pwd"
+          
+          InetAddress addr = InetAddress.getLocalHost();
+          String hostname = addr.getHostName();
+          echo "stroj=${hostname}"
           env.USERNAME1 = input message: 'Zadej uzivatele',
                              parameters: [string(defaultValue: '',
                                           description: '',
@@ -21,4 +25,4 @@ pipeline {
   }
 }
 
- echo  "currentBuild.result = ${currentBuild.result}"
+currentBuild.displayName = "  ${env.BUILD_ID} -  ${currentBuild.currentResult} "
