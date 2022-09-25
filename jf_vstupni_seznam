@@ -1,33 +1,7 @@
 pipeline {
-  agent any
-  stages {
-    stage ("Vstupni hodnoty") {
-      steps {
-        script {
-          //sh "echo 'user='${USERNAME} 'stroj='${HOSTNAME} 'pwd='${PWD}"
-          sh "users ; hostname ; pwd"
-          
-          /*
-          string localhostname = java.net.InetAddress.getLocalHost().getHostName(); //pobolit v Dashboard > ScriptApproval
-          echo "stroj=${localhostname}"
-          */
-          
-          env.USERNAME1 = input message: 'Zadej uzivatele',
-                             parameters: [string(defaultValue: '',
-                                          description: '',
-                                          name: 'Username')]
-          
-          
-          
-        }
-        echo "Uzivatel: ${env.USERNAME1}"
-        echo "Heslo: ${env.PASSWORD}"
-      }
-    }
-  }
-  
-  
-          stage('Setup parameters') {
+    agent any
+    stages {
+        stage('Setup parameters') {
             steps {
                 script { 
                     properties([
@@ -58,7 +32,5 @@ pipeline {
                 }
             }
         }
-  
+    }   
 }
-
-currentBuild.displayName = "  ${env.BUILD_ID} -  ${currentBuild.currentResult} "
