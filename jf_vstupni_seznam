@@ -9,7 +9,7 @@ pipeline {
                                           description: '',
                                           name: 'Usernamee')]
           
-          echo 'user='${USERNAME} 'stroj='${HOSTNAME} 'pwd='${PWD}
+          sh "echo 'user='${USERNAME} 'stroj='${HOSTNAME} 'pwd='${PWD}"
           
         }
         echo "Uzivatel: ${env.USERNAME1}"
@@ -18,3 +18,5 @@ pipeline {
     }
   }
 }
+
+ echo  "currentBuild.result = ${currentBuild.result}"
