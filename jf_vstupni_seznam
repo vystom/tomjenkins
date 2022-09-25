@@ -13,18 +13,18 @@ pipeline {
                             booleanParam(
                                 defaultValue: true, 
                                 description: '', 
-                                name: 'BOOLEAN'
+                                name: 'BOOLEAN_01'
                             ),
                             text(
                                 defaultValue: '''
-                                this is a multi-line 
-                                string parameter example
+                                toto je viceradkovy text
+                                parametr se jmenu text
                                 ''', 
-                                 name: 'MULTI-LINE-STRING'
+                                 name: 'TEXT_01'
                             ),
                             string(
-                                defaultValue: 'scriptcrunch', 
-                                name: 'STRING-PARAMETER', 
+                                defaultValue: 'blabla', 
+                                name: 'RETEZEC_01', 
                                 trim: true
                             )
                         ])
@@ -37,6 +37,9 @@ pipeline {
             steps {
                 script {
                     println "vyber-choice = ${PARAMETER_01}" 
+                    println "BOOLEAN_01' = ${BOOLEAN_01}" 
+                    println "viceradkovy text - TEXT_01' = ${TEXT_01}" 
+                    println "RETEZEC_01' = ${RETEZEC_01}" 
 
                 }
              }
