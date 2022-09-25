@@ -7,8 +7,10 @@ pipeline {
           //sh "echo 'user='${USERNAME} 'stroj='${HOSTNAME} 'pwd='${PWD}"
           sh "users ; hostname ; pwd"
           
+          /*
           string localhostname = java.net.InetAddress.getLocalHost().getHostName(); //pobolit v Dashboard > ScriptApproval
           echo "stroj=${localhostname}"
+          */
           
           env.USERNAME1 = input message: 'Zadej uzivatele',
                              parameters: [string(defaultValue: '',
@@ -23,6 +25,40 @@ pipeline {
       }
     }
   }
+  
+  
+          stage('Setup parameters') {
+            steps {
+                script { 
+                    properties([
+                        parameters([
+                            choice(
+                                choices: ['ONE', 'TWO'], 
+                                name: 'PARAMETER_01'
+                            ),
+                            booleanParam(
+                                defaultValue: true, 
+                                description: '', 
+                                name: 'BOOLEAN'
+                            ),
+                            text(
+                                defaultValue: '''
+                                this is a multi-line 
+                                string parameter example
+                                ''', 
+                                 name: 'MULTI-LINE-STRING'
+                            ),
+                            string(
+                                defaultValue: 'scriptcrunch', 
+                                name: 'STRING-PARAMETER', 
+                                trim: true
+                            )
+                        ])
+                    ])
+                }
+            }
+        }
+  
 }
 
 currentBuild.displayName = "  ${env.BUILD_ID} -  ${currentBuild.currentResult} "
