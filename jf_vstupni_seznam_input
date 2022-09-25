@@ -25,6 +25,12 @@ pipeline {
                     vstupni_seznam.eachLine { println "$it" }
                     //[vstupni_seznam].eachLine { println "$it" }
                     [vstupni_seznam].each { print "$it" }
+                    
+                    def testParamValues = "${params.vstupni_seznam}".split(',')
+                    
+                    testParamValues.each { testParamValue ->
+                        print testParamValue.trim()
+                    
                 }
             }
         }
