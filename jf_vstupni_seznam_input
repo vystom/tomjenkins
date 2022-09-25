@@ -21,7 +21,9 @@ pipeline {
             }
             steps {
                 echo "Tvoje soubory ${vstupni_seznam}"
-                vstupni_seznam.each { println "$it" }
+                script {
+                    vstupni_seznam.each { println "$it" }
+                }
             }
         }
     }
