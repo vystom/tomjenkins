@@ -37,7 +37,8 @@ pipeline {
                     [testParamValues].each { print "$it" }
                     */
                     
-                 employee = ["Ken", "John", "Sally"]
+                // employee = ["Ken", "John", "Sally"]
+		 employee = [vstupni_seznam]
 		     for(emp in employee) {
                      	 println(emp);
                      }
