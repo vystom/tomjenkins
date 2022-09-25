@@ -9,11 +9,11 @@ pipeline {
                     extendedChoice(
                                 name: 'vstupni_seznam', 
                                 defaultValue: 'Build & Deploy', 
-                                multiSelectDelimiter: ' ', 
+                                multiSelectDelimiter: ',', 
                                 quoteValue: false, 
                                 saveJSONParameterToFile: false, 
                                 type: 'PT_MULTI_SELECT',
-                                value:'soubor1 soubor2 soubor3',
+                                value:'soubor1,soubor2,soubor3,soubor4',
                                 visibleItemCount: 3,
                                 description: 'Soubory PZ02 ke skopirovani'
                             )
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo "Tvoje soubory ${vstupni_seznam}"
                 script {
-                    vstupni_seznam.each { println "$it" }
+                    vstupni_seznam.eachLine { println "$it" }
                 }
             }
         }
