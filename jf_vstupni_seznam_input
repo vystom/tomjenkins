@@ -13,7 +13,7 @@ pipeline {
                                 quoteValue: false, 
                                 saveJSONParameterToFile: false, 
                                 type: 'PT_MULTI_SELECT',
-                                value:'soubor1,soubor2,soubor3,soubor4',
+                                value:'soubor1, soubor2, soubor3, soubor4',
                                 visibleItemCount: 3,
                                 description: 'Soubory PZ02 ke skopirovani'
                             )
