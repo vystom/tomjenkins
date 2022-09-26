@@ -13,7 +13,7 @@ pipeline {
                 sh "ls -m /home/tomino/SB*"
 
                 //sh "vstup=`ls --format=commas $maska`"
-                echo ${vstup}
+                echo vstup
             }
 
         
