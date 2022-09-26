@@ -15,7 +15,7 @@ pipeline {
                     //sh "vstup=`ls --format=commas $maska`"
                 
                     
-                 echo "vstup je : ${vstup}"
+                 echo "vstup je : $vstup"
                 }
             }
 
