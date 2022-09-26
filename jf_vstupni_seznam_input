@@ -36,9 +36,13 @@ pipeline {
                     }
                     [testParamValues].each { print "$it" }
                     */
+		    
+		    seznam[]=vstupni_seznam
+		    println "pole 1"
+		    println seznam[1]
                     
-                // employee = ["Ken", "John", "Sally"]
-		 employee = [$vstupni_seznam]
+                 employee = ["Ken", "John", "Sally"]
+		 //employee = [$vstupni_seznam]
 		     for(emp in employee) {
                      	 println(emp);
                      }
@@ -49,9 +53,14 @@ pipeline {
 		   println "Vstupni seznam=$vstupni_seznam" 
 		   
 		   str = vstupni_seznam.split(',')
-      		   for( String hosnoty : str )
+      		   for( String hodnoty : str )
 		   	println(hodnoty)
 			println hodnoty[1]
+			
+			for (i = 0; i <componentList.size(); i++) {
+   				 println componentList[i]
+			}
+			
 		  */
                    
                 }
