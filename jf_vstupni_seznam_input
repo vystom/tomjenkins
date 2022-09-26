@@ -6,7 +6,7 @@ pipeline {
             
                 echo "Kde jsem"
                 sh "pwd; hostname; users"
-            
+            }
 
         }
 
