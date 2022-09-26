@@ -16,7 +16,8 @@ pipeline {
                     //println vstup
 
                     //vstup=sh "cd /home/tomino; pwd; ls -m SB*" 
-                    seznam_souboru()
+                    //seznam_souboru()
+                    vstup = sh(script: 'cd /home/tomino/; ls -m SB*', returnStdout: true)
                     echo "Kde jsem $vstup"
                     sh "pwd; hostname; users"
                     //prihlasit se pres klic na server pod sbserv
@@ -82,7 +83,8 @@ pipeline {
 }
 
 currentBuild.displayName = "  ${env.BUILD_ID} -  ${currentBuild.currentResult} "
-
+/*
 void seznam_souboru() {
     vstup = sh(script: 'cd /home/tomino/; ls -m SB*', returnStdout: true)
 }
+*/
