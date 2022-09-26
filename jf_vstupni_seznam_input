@@ -40,8 +40,8 @@ pipeline {
         }
 
         stage('Vyber souboru souboru') {
-            steps {
-                    input {
+
+            input {
                         message "Vyber soubory ke kopirovani"
                         ok 'Pokracuj'
                         parameters {
@@ -59,6 +59,10 @@ pipeline {
                             )
                         }
                     }
+
+
+            steps {
+                    
 
                 echo "Tvoje soubory ${vstupni_seznam}"
                 println " vsto z predchoziho krku" + vstup
