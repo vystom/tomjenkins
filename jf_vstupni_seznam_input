@@ -38,12 +38,14 @@ pipeline {
                     */
 		    
 		    def seznam = []
+		    seznam << "s0"
 		    seznam << "s1"
-		    seznam << "s3"
-		    seznam << "s3"
+		    seznam << "s2"
 		    
-		    println "velikost seznamy"+seznam.size()
-		    //println seznam[1]
+		    println "velikost seznamu je "+seznam.size()
+		    println "seznam0 = " + seznam[0]
+		    println "seznam2 = " + seznam[2]
+		    printl "cely seznam = " + seznam
                     
                  employee = ["Ken", "John", "Sally"]
 		 //employee = [$vstupni_seznam]
