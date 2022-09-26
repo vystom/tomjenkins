@@ -1,12 +1,14 @@
-//kde jsem
-sh "pwd"
-
-
-
 pipeline {
     agent any
     stages {
-        stage('Vstup souboru') {
+        stage('Nacteni souboru') {
+            echo "Kde jsem"
+            sh "pwd; hostname; users"
+
+
+        }
+
+        stage('Vzber souboru souboru') {
             input {
                 message "Vyber soubory ke kopirovani"
                 ok 'Pokracuj'
