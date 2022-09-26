@@ -10,7 +10,7 @@ pipeline {
                     vstup = readFile('prikaz').trim()
                     sh "export vstup $vstup"
                     */
-                    def vstup = sh(script: 'uptime', returnStdout: true)
+                    def vstup = sh(script: 'ls -m', returnStdout: true)
                     println vstup
 
                     //vstup=sh "cd /home/tomino; pwd; ls -m SB*" 
