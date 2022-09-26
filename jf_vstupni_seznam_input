@@ -1,3 +1,7 @@
+                    def vstup = sh(script: 'cd /home/tomino/; ls -m SB*', returnStdout: true)
+                    println vstup
+
+
 pipeline {
     agent any
     stages {
