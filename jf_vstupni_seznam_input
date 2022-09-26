@@ -42,9 +42,9 @@ pipeline {
 		     for(emp in employee) {
                      	 println(emp);
                      }
-                   
-		   seznam[]=vstupni_seznam
-		   println seznam[0]
+                   print "vdyp seznam"
+		   seznam[]=$vstupni_seznam
+		   println seznam[1]
 		   println "Vstupni seznam=$vstupni_seznam" 
 		   
 		   str = vstupni_seznam.split(',')
