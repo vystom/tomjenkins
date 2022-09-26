@@ -24,33 +24,22 @@ pipeline {
                 script {
                     vstupni_seznam.eachLine { println "$it" }
                     //[vstupni_seznam].eachLine { println "$it" }
-                    [vstupni_seznam].each { print "$it" }
-                    
-                    print params.vstupni_seznam
-               
-                    //string(name: 'vstupni_seznam', value: "${params.vstupni_seznam}")
-                    def testParamValues = "${params.vstupni_seznam}".split(',')
-                    /*
-                    testParamValues.each { testParamValue ->
-                        print testParamValue.trim()
-                    }
-                    [testParamValues].each { print "$it" }
-                    */
-		    
-		        def seznam = []
-		        //str = vstupni_seznam.split(',')
-      		    for( String hodnoty : vstupni_seznam.split(',')  )
-                seznam << hodnoty
+                    //[vstupni_seznam].each { print "$it" }
+                   
+		            def seznam = []
+		            //str = vstupni_seznam.split(',')
+      		        for( String hodnoty : vstupni_seznam.split(',')  )
+                    seznam << hodnoty
 		   
-		        println "velikost seznamu je "+seznam.size()
-		        println "seznam0 = " + seznam[0]
-		        println "seznam2 = " + seznam[2]
-		        println "cely seznam = " + seznam
+		            println "velikost seznamu je "+seznam.size()
+		            println "seznam0 = " + seznam[0]
+		            println "seznam2 = " + seznam[2]
+		            println "cely seznam = " + seznam
                 
-		  	    for (i = 0; i <seznam.size(); i++) {
-   				 println "Soubor[$i]= "+seznam[i]
-		             
-                }
+		  	        for (i = 0; i <seznam.size(); i++) {
+   				        println "Soubor[$i]= "+seznam[i]
+		            }
+                }    
             }
         }
     }
