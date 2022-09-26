@@ -32,24 +32,7 @@ pipeline {
                 }
 
 
-            input {
-                message "Vyber soubory ke kopirovani"
-                ok 'Pokracuj'
-                parameters {
-                    extendedChoice(
-                                name: 'vstupni_seznam', 
-                                defaultValue: 'Build & Deploy', 
-                                multiSelectDelimiter: ',', 
-                                quoteValue: false, 
-                                saveJSONParameterToFile: false, 
-                                type: 'PT_MULTI_SELECT',
-                                //value:'soubor1, soubor2, soubor3, soubor4',
-                                value: vstup,
-                                visibleItemCount: 10,
-                                description: 'Soubory PZ02 ke skopirovani'
-                            )
-                }
-            }
+           
 
             }
 
@@ -57,7 +40,7 @@ pipeline {
         }
 
         stage('Vyber souboru souboru') {
-            /*
+            
             input {
                 message "Vyber soubory ke kopirovani"
                 ok 'Pokracuj'
@@ -69,14 +52,14 @@ pipeline {
                                 quoteValue: false, 
                                 saveJSONParameterToFile: false, 
                                 type: 'PT_MULTI_SELECT',
-                                //value:'soubor1, soubor2, soubor3, soubor4',
-                                value: vstup,
+                                value:'soubor1, soubor2, soubor3, soubor4',
+                                //value: vstup,
                                 visibleItemCount: 10,
                                 description: 'Soubory PZ02 ke skopirovani'
                             )
                 }
             }
-            */
+            
             steps {
                 echo "Tvoje soubory ${vstupni_seznam}"
                 println " vsto z predchoziho krku" + vstup
