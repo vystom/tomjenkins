@@ -49,7 +49,7 @@ pipeline {
                 parameters {
                     extendedChoice(
                                 //name: 'vstupni_seznam', 
-                                name: $vstup,
+                                name: "$vstup",
                                 defaultValue: 'Build & Deploy', 
                                 multiSelectDelimiter: ',', 
                                 quoteValue: false, 
