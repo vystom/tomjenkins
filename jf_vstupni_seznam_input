@@ -43,7 +43,17 @@ pipeline {
         stage('Vyber souboru souboru') {
             
            
-            input {
+            
+           
+
+         
+
+            steps {
+                echo "Tvoje soubory ${vstupni_seznam}"
+                println " vsto z predchoziho krku" + vstup
+                script {
+
+input {
                 message "Vyber soubory ke kopirovani"
                 ok 'Pokracuj'
                 parameters {
@@ -55,20 +65,23 @@ pipeline {
                                 saveJSONParameterToFile: false, 
                                 type: 'PT_MULTI_SELECT',
                                 //value:'soubor1, soubor2, soubor3, soubor4',
-                                value: println vstup,
+                                value: vstup,
                                 visibleItemCount: 10,
                                 description: 'Soubory PZ02 ke skopirovani'
                             )
                 }
             }
-           
 
-         
 
-            steps {
-                echo "Tvoje soubory ${vstupni_seznam}"
-                println " vsto z predchoziho krku" + vstup
-                script {
+
+
+
+
+
+
+
+
+
                     vstupni_seznam.eachLine { println "$it" }
                     //[vstupni_seznam].eachLine { println "$it" }
                     //[vstupni_seznam].each { print "$it" }
