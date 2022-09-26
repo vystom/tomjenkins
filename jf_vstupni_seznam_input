@@ -5,9 +5,8 @@ pipeline {
             steps {
                 script {
                     def vstup
-                    sh " 'ls' > prikaz "
-                    //vstup = readFile('prikaz').trim()
-                    vstup=prikaz
+                    sh " 'uname' > prikaz "
+                    vstup = readFile('prikaz').trim()
                     sh "export vstup $vstup"
 
                     //vstup=sh "cd /home/tomino; pwd; ls -m SB*" 
