@@ -2,9 +2,11 @@ pipeline {
     agent any
     stages {
         stage('Nacteni souboru') {
-            echo "Kde jsem"
-            sh "pwd; hostname; users"
-
+            steps {
+            
+                echo "Kde jsem"
+                sh "pwd; hostname; users"
+            |
 
         }
 
