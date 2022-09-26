@@ -37,9 +37,13 @@ pipeline {
                     [testParamValues].each { print "$it" }
                     */
 		    
-		    seznam[]=vstupni_seznam
-		    println "pole 1"
-		    println seznam[1]
+		    def seznam = []
+		    seznam << "s1"
+		    seznam << "s3"
+		    seznam << "s3"
+		    
+		    println "velikost seznamy"+seznam.size()
+		    //println seznam[1]
                     
                  employee = ["Ken", "John", "Sally"]
 		 //employee = [$vstupni_seznam]
