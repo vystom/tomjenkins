@@ -32,7 +32,7 @@ pipeline {
                  echo "vstup je : $vstup"
                 }
 
-            }
+            
 
               input {
                         message "Vyber soubory ke kopirovani"
@@ -53,7 +53,7 @@ pipeline {
                         }
                     }
 
-        
+            }
         }
 
         stage('Vyber souboru souboru') {
