@@ -48,7 +48,8 @@ pipeline {
                 ok 'Pokracuj'
                 parameters {
                     extendedChoice(
-                                name: 'vstupni_seznam', 
+                                //name: 'vstupni_seznam', 
+                                name: vstup,
                                 defaultValue: 'Build & Deploy', 
                                 multiSelectDelimiter: ',', 
                                 quoteValue: false, 
