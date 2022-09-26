@@ -6,6 +6,9 @@ pipeline {
             
                 echo "Kde jsem"
                 sh "pwd; hostname; users"
+                //prihlasit se pres klic na server pod sbserv
+                sh "cd $HOME; ls -1 SBA*"
+
             }
 
         }
