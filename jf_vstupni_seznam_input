@@ -76,8 +76,12 @@ pipeline {
             }
             */
 
-            input {param.vstupni_seznam}
-            
+            input {
+                message "Vyber soubory ke kopirovani"
+                ok 'Pokracuj'
+                parameters {param.vstupni_seznam}
+            }
+
             steps {
                 echo "Tvoje soubory ${vstupni_seznam}"
                 println " vsto z predchoziho krku" + vstup
