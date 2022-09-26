@@ -4,10 +4,14 @@ pipeline {
         stage('Nacteni souboru') {
             steps {
                 script {
+                    /*
                     def vstup
                     sh " 'uname' > prikaz "
                     vstup = readFile('prikaz').trim()
                     sh "export vstup $vstup"
+                    */
+                    def vstup = sh(script: 'uptime', returnStdout: true)
+                    println vstup
 
                     //vstup=sh "cd /home/tomino; pwd; ls -m SB*" 
                     echo "Kde jsem $vstup"
