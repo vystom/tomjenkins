@@ -37,43 +37,19 @@ pipeline {
                     [testParamValues].each { print "$it" }
                     */
 		    
-		    def seznam = []
-		    //str = vstupni_seznam.split(',')
-      		   for( String hodnoty : vstupni_seznam.split(',')  )
-               seznam << hodnoty
-		    /*
-		    seznam << "s0"
-		    seznam << "s1"
-		    seznam << "s2"
-		    */
-		    
-		    println "velikost seznamu je "+seznam.size()
-		    println "seznam0 = " + seznam[0]
-		    println "seznam2 = " + seznam[2]
-		    println "cely seznam = " + seznam
-                    
-                 employee = ["Ken", "John", "Sally"]
-		 //employee = [$vstupni_seznam]
-		     for(emp in employee) {
-                     	 println(emp);
-                     }
-                  /*
-		  print "vdyp seznam"
-		   seznam[]=$vstupni_seznam
-		   println seznam[1]
-		   println "Vstupni seznam=$vstupni_seznam" 
+		        def seznam = []
+		        //str = vstupni_seznam.split(',')
+      		    for( String hodnoty : vstupni_seznam.split(',')  )
+                seznam << hodnoty
 		   
-		   str = vstupni_seznam.split(',')
-      		   for( String hodnoty : str )
-		   	println(hodnoty)
-			println hodnoty[1]
-			
-			for (i = 0; i <componentList.size(); i++) {
-   				 println componentList[i]
-			}
-			
-		  */
-                   
+		        println "velikost seznamu je "+seznam.size()
+		        println "seznam0 = " + seznam[0]
+		        println "seznam2 = " + seznam[2]
+		        println "cely seznam = " + seznam
+                
+		  	    for (i = 0; i <seznam.size(); i++) {
+   				 println "Soubor[$i]= "+seznam[i]
+		             
                 }
             }
         }
