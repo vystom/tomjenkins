@@ -84,9 +84,11 @@ pipeline {
 		            }
                 }    
             }
+        
         }
-    }
+    
 }
+
 
 currentBuild.displayName = "  ${env.BUILD_ID} -  ${currentBuild.currentResult} "
 /*
