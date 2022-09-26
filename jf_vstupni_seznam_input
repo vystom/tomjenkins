@@ -1,18 +1,5 @@
 def vstup 
- parameters {
-                    extendedChoice(
-                                name: 'vstupni_seznam', 
-                                defaultValue: 'Build & Deploy', 
-                                multiSelectDelimiter: ',', 
-                                quoteValue: false, 
-                                saveJSONParameterToFile: false, 
-                                type: 'PT_MULTI_SELECT',
-                                //value:'soubor1, soubor2, soubor3, soubor4',
-                                value: vstup,
-                                visibleItemCount: 10,
-                                description: 'Soubory PZ02 ke skopirovani'
-                            )
-                }
+ 
 
 pipeline {
     agent any
@@ -55,7 +42,7 @@ pipeline {
 
         stage('Vyber souboru souboru') {
             
-           /*
+           
             input {
                 message "Vyber soubory ke kopirovani"
                 ok 'Pokracuj'
@@ -74,13 +61,9 @@ pipeline {
                             )
                 }
             }
-            */
+           
 
-            input {
-                message "Vyber soubory ke kopirovani"
-                ok 'Pokracuj'
-                parameters {param.vstupni_seznam}
-            }
+         
 
             steps {
                 echo "Tvoje soubory ${vstupni_seznam}"
