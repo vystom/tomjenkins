@@ -43,12 +43,15 @@ pipeline {
                      	 println(emp);
                      }
                    
+		   seznam[]=vstupni_seznam
+		   println seznam[0]
 		   println "Vstupni seznam=$vstupni_seznam" 
 		   
 		   str = vstupni_seznam.split(',')
-      		   for( String values : str )
-		   	println(values)
-			println[1]
+      		   for( String hosnoty : str )
+		   	println(hodnoty)
+			println hodnoty[1]
+			
                    
                 }
             }
