@@ -1,7 +1,12 @@
+//kde jsem
+sh "pwd"
+
+
+
 pipeline {
     agent any
     stages {
-        stage('Example') {
+        stage('Vstup souboru') {
             input {
                 message "Vyber soubory ke kopirovani"
                 ok 'Pokracuj'
