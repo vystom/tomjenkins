@@ -8,12 +8,12 @@ pipeline {
                 sh "pwd; hostname; users"
                 //prihlasit se pres klic na server pod sbserv
                 //nize uveden asi do solo skriptu prel nebo bash
-                sh "cd /home/tomino; pwd; vstup=`ls -m /home/tomino/SB*`"
+                sh "cd /home/tomino; pwd; vstup=`ls -m SB*`"
                 sh "ls --format=commas /home/tomino/SB*"
                 sh "ls -m /home/tomino/SB*"
 
                 //sh "vstup=`ls --format=commas $maska`"
-                echo $vstup
+                echo ${vstup}
             }
 
         
