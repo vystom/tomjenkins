@@ -5,20 +5,22 @@ pipeline {
             steps {
                 script {
                     def vstup
-                    my_var="`ls -l`"
-                    echo $my_var
-                    vstup=sh "cd /home/tomino; pwd; ls -m SB*" 
+                    sh " 'uname' > prikaz "
+                    vstup = readFile('prikaz').trim()
+                    sh "export vstup $vstup"
+
+                    //vstup=sh "cd /home/tomino; pwd; ls -m SB*" 
                     echo "Kde jsem $vstup"
                     sh "pwd; hostname; users"
                     //prihlasit se pres klic na server pod sbserv
                     //nize uveden asi do solo skriptu prel nebo bash
-                    sh "cd /home/tomino; pwd; vstup=`ls -m SB*`"
+                    //sh "cd /home/tomino; pwd; vstup=`ls -m SB*`"
                     //sh "ls --format=commas /home/tomino/SB*"
                     //sh "ls -m /home/tomino/SB*"
                     //sh "vstup=`ls --format=commas $maska`"
                 
                     
-                 echo "vstup je : $my_var"
+                 echo "vstup je : $vstup"
                 }
             }
 
