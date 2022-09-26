@@ -38,7 +38,9 @@ pipeline {
                     */
 		    
 		    def seznam = []
-		    seznam << vstupni_seznam.split(',')
+		    //seznam << vstupni_seznam.split(',')
+            str = vstupni_seznam.split(',')
+      		   for( String seznam : str )
 		    /*
 		    seznam << "s0"
 		    seznam << "s1"
