@@ -44,7 +44,11 @@ pipeline {
                      }
                    
 		   println "Vstupni seznam=$vstupni_seznam" 
-                    
+		   
+		   str = vstupni_seznam.split(',');
+      		   for( String values : str )
+		   	println(values);
+                   
                 }
             }
         }
