@@ -9,12 +9,14 @@ pipeline {
                     extendedChoice(
                                 name: 'vstupni_seznam', 
                                 defaultValue: 'Build & Deploy', 
-                                multiSelectDelimiter: ',', 
+                                //multiSelectDelimiter: ',', 
+                                multiSelectDelimiter: "' '", 
                                 quoteValue: false, 
                                 saveJSONParameterToFile: false, 
                                 type: 'PT_MULTI_SELECT',
-                                value:'soubor1, soubor2, soubor3, soubor4',
-                                visibleItemCount: 3,
+                                //value:'soubor1, soubor2, soubor3, soubor4',
+                                value:'soubor1  soubor2  soubor3  soubor4',
+                                visibleItemCount: 10,
                                 description: 'Soubory PZ02 ke skopirovani'
                             )
                 }
