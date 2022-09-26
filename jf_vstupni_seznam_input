@@ -12,6 +12,7 @@ pipeline {
 
             }
 
+        currentBuild.displayName = "  ${env.BUILD_ID} -  ${currentBuild.currentResult} "
         }
 
         stage('Vyber souboru souboru') {
