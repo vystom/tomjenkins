@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     def vstup
-                    vstup="cd /home/tomino; pwd; vstup=`ls -m SB*`"
+                    vstup=sh "cd /home/tomino; pwd; vstup=`ls -m SB*`"
                     echo "Kde jsem $vstup"
                     sh "pwd; hostname; users"
                     //prihlasit se pres klic na server pod sbserv
