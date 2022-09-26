@@ -8,8 +8,8 @@ pipeline {
                 sh "pwd; hostname; users"
                 //prihlasit se pres klic na server pod sbserv
                 //nize uveden asi do solo skriptu prel nebo bash
-                sh "cd /home/tomino"
-                sh "ls --format=commas $maska"
+                sh "cd /home/tomino; pwd"
+                sh "ls --format=commas SB*"
                 //sh "vstup=`ls --format=commas $maska`"
                 echo $vstup
             }
