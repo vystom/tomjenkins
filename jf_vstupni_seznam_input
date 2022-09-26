@@ -53,11 +53,11 @@ pipeline {
                 println " vsto z predchoziho krku" + vstup
                 script {
 
-input {
-                message "Vyber soubory ke kopirovani"
-                ok 'Pokracuj'
-                parameters {
-                    extendedChoice(
+                    input {
+                        message "Vyber soubory ke kopirovani"
+                        ok 'Pokracuj'
+                        parameters {
+                        extendedChoice(
                                 name: 'vstupni_seznam', 
                                 defaultValue: 'Build & Deploy', 
                                 multiSelectDelimiter: ',', 
@@ -69,8 +69,8 @@ input {
                                 visibleItemCount: 10,
                                 description: 'Soubory PZ02 ke skopirovani'
                             )
-                }
-            }
+                        }
+                    }
 
 
 
