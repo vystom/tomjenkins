@@ -1,9 +1,3 @@
-void seznam_souboru() {
-    def vstup = sh(script: 'cd /home/tomino/; ls -m SB*', returnStdout: true
-}
-                 
-
-
 pipeline {
     agent any
     stages {
@@ -86,3 +80,7 @@ pipeline {
 }
 
 currentBuild.displayName = "  ${env.BUILD_ID} -  ${currentBuild.currentResult} "
+
+void seznam_souboru() {
+    def vstup = sh(script: 'cd /home/tomino/; ls -m SB*', returnStdout: true)
+}
