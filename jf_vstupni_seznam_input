@@ -10,7 +10,7 @@ pipeline {
                 //nize uveden asi do solo skriptu prel nebo bash
                 sh "cd /home/tomino"
                 sh "ls --format=commas $maska"
-                sh "vstup=`ls --format=commas $maska`"
+                //sh "vstup=`ls --format=commas $maska`"
                 echo $vstup
             }
 
