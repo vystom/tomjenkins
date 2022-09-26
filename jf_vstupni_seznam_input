@@ -57,7 +57,7 @@ pipeline {
             }
             steps {
                 echo "Tvoje soubory ${vstupni_seznam}"
-                println vstup
+                println " vsto z predchoziho krku" + vstup
                 script {
                     vstupni_seznam.eachLine { println "$it" }
                     //[vstupni_seznam].eachLine { println "$it" }
