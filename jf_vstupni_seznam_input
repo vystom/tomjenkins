@@ -43,6 +43,7 @@ pipeline {
                      	 println(emp);
                      }
                    
+		   println "Vstupni seznam=$vstupni_seznam" 
                     
                 }
             }
