@@ -32,7 +32,6 @@ pipeline {
         }
 
         stage('Vyber souboru souboru') {
-            println vstup
             input {
                 message "Vyber soubory ke kopirovani"
                 ok 'Pokracuj'
@@ -53,6 +52,7 @@ pipeline {
             }
             steps {
                 echo "Tvoje soubory ${vstupni_seznam}"
+                println vstup
                 script {
                     vstupni_seznam.eachLine { println "$it" }
                     //[vstupni_seznam].eachLine { println "$it" }
