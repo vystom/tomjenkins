@@ -10,7 +10,7 @@ pipeline {
                                 name: 'vstupni_seznam', 
                                 defaultValue: 'Build & Deploy', 
                                 //multiSelectDelimiter: ',', 
-                                multiSelectDelimiter: "' '", 
+                                multiSelectDelimiter: '' '', 
                                 quoteValue: false, 
                                 saveJSONParameterToFile: false, 
                                 type: 'PT_MULTI_SELECT',
