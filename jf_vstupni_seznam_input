@@ -38,11 +38,12 @@ pipeline {
                     */
                     
                 // employee = ["Ken", "John", "Sally"]
-		 employee = [vstupni_seznam]
+		 employee = [$vstupni_seznam]
 		     for(emp in employee) {
                      	 println(emp);
                      }
-                   print "vdyp seznam"
+                  /*
+		  print "vdyp seznam"
 		   seznam[]=$vstupni_seznam
 		   println seznam[1]
 		   println "Vstupni seznam=$vstupni_seznam" 
@@ -51,7 +52,7 @@ pipeline {
       		   for( String hosnoty : str )
 		   	println(hodnoty)
 			println hodnoty[1]
-			
+		  */
                    
                 }
             }
