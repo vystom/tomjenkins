@@ -9,10 +9,10 @@ pipeline {
                 //prihlasit se pres klic na server pod sbserv
                 //nize uveden asi do solo skriptu prel nebo bash
                 sh "cd /home/tomino; ls -1 $maska"
-
+              currentBuild.displayName = "  ${env.BUILD_ID} -  ${currentBuild.currentResult} "  
             }
 
-        currentBuild.displayName = "  ${env.BUILD_ID} -  ${currentBuild.currentResult} "
+        
         }
 
         stage('Vyber souboru souboru') {
