@@ -7,13 +7,13 @@ pipeline {
                 echo "Kde jsem"
                 sh "pwd; hostname; users"
                 //prihlasit se pres klic na server pod sbserv
-                sh "cd /home/$USERNAME; ls -1 SBA*"
+                sh "cd /home/$USER; ls -1 SBA*"
 
             }
 
         }
 
-        stage('Vzber souboru souboru') {
+        stage('Vyber souboru souboru') {
             input {
                 message "Vyber soubory ke kopirovani"
                 ok 'Pokracuj'
