@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     def vstup
-                    my_var=`ls -l`
+                    my_var="`ls -l`"
                     echo $my_var
                     vstup=sh "cd /home/tomino; pwd; ls -m SB*" 
                     echo "Kde jsem $vstup"
