@@ -6,7 +6,8 @@ pipeline {
                 script {
                     def vstup
                     sh " 'ls' > prikaz "
-                    vstup = readFile('prikaz').trim()
+                    //vstup = readFile('prikaz').trim()
+                    vstup=prikaz
                     sh "export vstup $vstup"
 
                     //vstup=sh "cd /home/tomino; pwd; ls -m SB*" 
