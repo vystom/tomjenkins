@@ -5,7 +5,9 @@ pipeline {
             steps {
                 script {
                     def vstup
-                    vstup="sh "cd /home/tomino; pwd; ls -m SB*" "
+                    my_var=`ls -l`
+                    echo $my_var
+                    vstup=sh "cd /home/tomino; pwd; ls -m SB*" 
                     echo "Kde jsem $vstup"
                     sh "pwd; hostname; users"
                     //prihlasit se pres klic na server pod sbserv
@@ -16,7 +18,7 @@ pipeline {
                     //sh "vstup=`ls --format=commas $maska`"
                 
                     
-                 echo "vstup je : $vstup"
+                 echo "vstup je : $my_var"
                 }
             }
 
