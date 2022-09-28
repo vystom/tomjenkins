@@ -80,10 +80,17 @@ pipeline {
                                     description: 'Soubory PZ02 ke skopirovani'),
                             ])
                     
+                    println " vsto z predchoziho krku" + vstup
 
-                echo "Tvoje soubory ${userInput.vstupni_seznam}"
-                println " vsto z predchoziho krku" + vstup
+                    seznam_souboru = userInput.vstupni_seznam?:''
+
+                    // Echo to console
+                    echo("Vystup ze seznamu souboru : ${seznam_souboru}")
+                    //echo("Vystup z seznamu souboru : ${userInput.vstupni_seznam}")
+                    //echo "Tvoje soubory ${userInput.vstupni_seznam}"
                 
+                
+                    /*    
 
                     def seznam = []
 		            //str = vstupni_seznam.split(',')
@@ -98,6 +105,8 @@ pipeline {
 		  	        for (i = 0; i <seznam.size(); i++) {
    				        println "Soubor[$i]= "+seznam[i]
 		            }
+
+                    */
                 }    
             }
         
