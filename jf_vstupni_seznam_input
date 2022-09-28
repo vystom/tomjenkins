@@ -73,6 +73,7 @@ pipeline {
                                             description: 'Path of config file',
                                             name: 'Config'),
                                 */ 
+                                    ,
                                     extendedChoice(
                                         name: 'vstupni_seznam', 
                                         defaultValue: 'Defaultni hodnota', 
