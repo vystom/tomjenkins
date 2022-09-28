@@ -65,7 +65,7 @@ pipeline {
                 script {
                     // Get the input
                     
-                    /def userInput = input(
+                    def userInput = input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
                                     string(defaultValue: 'None',
