@@ -67,35 +67,27 @@ pipeline {
                     def userInput = input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
-                                    string(defaultValue: 'None',
-                                            description: 'Path of config file',
-                                            name: 'Config'),
-                                    extendedChoice(
-                                        name: 'vstupni_seznam', 
-                                        defaultValue: 'Defaultni hodnota', 
-                                        multiSelectDelimiter: ',', 
-                                        quoteValue: false, 
-                                        saveJSONParameterToFile: false, 
-                                        type: 'PT_MULTI_SELECT',
-                                        //value:'soubor1, soubor2, soubor3, soubor4',
-                                        value: "${vstup}",
-                                        visibleItemCount: 10,
-                                        description: 'Soubory PZ02 ke skopirovani'),
+                                extendedChoice(
+                                    name: 'vstupni_seznam', 
+                                    defaultValue: 'Defaultni hodnota', 
+                                    multiSelectDelimiter: ',', 
+                                    quoteValue: false, 
+                                    saveJSONParameterToFile: false, 
+                                    type: 'PT_MULTI_SELECT',
+                                    //value:'soubor1, soubor2, soubor3, soubor4',
+                                    value: "${vstup}",
+                                    visibleItemCount: 10,
+                                    description: 'Soubory PZ02 ke skopirovani'),
                             ])
                     
 
-                echo "Tvoje soubory ${vstupni_seznam}"
+                echo "Tvoje soubory ${userInput.vstupni_seznam}"
                 println " vsto z predchoziho krku" + vstup
                 
 
-                 
-                    vstupni_seznam.eachLine { println "$it" }
-                    //[vstupni_seznam].eachLine { println "$it" }
-                    //[vstupni_seznam].each { print "$it" }
-                   
-		            def seznam = []
+                    def seznam = []
 		            //str = vstupni_seznam.split(',')
-      		        for( String hodnoty : vstupni_seznam.split(',')  )
+      		        for( String hodnoty : userInput.vstupni_seznam.split(',')  )
                     seznam << hodnoty
 		   
 		            println "velikost seznamu je "+seznam.size()
