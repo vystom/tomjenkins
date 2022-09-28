@@ -68,11 +68,11 @@ pipeline {
                     def userInput = input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
-                               
+                               /*
                                     string(defaultValue: 'None',
                                             description: 'Path of config file',
                                             name: 'Config'),
-                                 
+                                */ 
                                     extendedChoice(
                                         name: 'vstupni_seznam', 
                                         defaultValue: 'Defaultni hodnota', 
@@ -83,7 +83,7 @@ pipeline {
                                         //value:'soubor1, soubor2, soubor3, soubor4',
                                         value: "${vstup}",
                                         visibleItemCount: 10,
-                                        description: 'Soubory PZ02 ke skopirovani'),
+                                        description: 'Soubory PZ02 ke skopirovani')
                             ])
 
                     // Save to variables. Default to empty string if not found.
