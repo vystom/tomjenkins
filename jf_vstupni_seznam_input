@@ -113,7 +113,7 @@ pipeline {
                     def seznam = []
 		            //str = vstupni_seznam.split(',')
       		        //for( String hodnoty : userInput.vstupni_seznam.split(',')  )
-                    for( String hodnoty : userInput.vstupni_seznam.split(',')  )
+                    for( String hodnoty : seznam_souboru.split(',')  )
                     seznam << hodnoty
 		   
 		            println "velikost seznamu je "+seznam.size()
