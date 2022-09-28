@@ -1,5 +1,16 @@
 def vstup 
  
+def componentsList = "one two three"
+environment {
+    COMPONENTS_LIST = componentsList
+}
+parameters {
+    extendedChoice (description: 'Components', multiSelectDelimiter: ' ', 
+    name: 'Components_To_Deploy', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_MULTI_SELECT', 
+    value: componentsList, visibleItemCount: 3)
+}
+
+
 
 pipeline {
     agent any
