@@ -66,7 +66,7 @@ pipeline {
                     // Get the input
                     
                     def userInput =[]
-                    def userInput = input(
+                        userInput = input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
                                 extendedChoice(
