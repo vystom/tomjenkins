@@ -87,7 +87,7 @@ pipeline {
                     println " vsto z predchoziho krku" + vstup
 
                     //seznam_souboru = userInput.vstupni_seznam?:''
-                    seznam_souboru = vstupni_seznam
+                    seznam_souboru = $vstupni_seznam
 
                     // Echo to console
                     echo("Vystup ze seznamu souboru : ${seznam_souboru}")
