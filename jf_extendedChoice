@@ -29,26 +29,33 @@ pipeline {
                     def inputTest
 
                     // Get the input
-                    //def userInput = input(
-                        input(
-                            id: 'userInput', message: 'Enter path of test reports:?',
+                    def userInput = input(
+                            id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
 
                                     string(defaultValue: 'None',
                                             description: 'Path of config file',
                                             name: 'Config'),
-                                    string(defaultValue: 'None',
-                                            description: 'Test Info file',
-                                            name: 'Test'),
+                                    extendedChoice(
+                                        name: 'vstupni_seznam', 
+                                        defaultValue: 'Defaultni hodnota', 
+                                        multiSelectDelimiter: ',', 
+                                        quoteValue: false, 
+                                        saveJSONParameterToFile: false, 
+                                        type: 'PT_MULTI_SELECT',
+                                        value:'soubor1, soubor2, soubor3, soubor4',
+                                        //value: '$vstup',
+                                        visibleItemCount: 10,
+                                        description: 'Soubory PZ02 ke skopirovani'),
                             ])
 
                     // Save to variables. Default to empty string if not found.
                     inputConfig = userInput.Config?:''
-                    inputTest = userInput.Test?:''
+                    inputTest = userInput.vstupni_seznam?:''
 
                     // Echo to console
                     echo("IQA Sheet Path: ${inputConfig}")
-                    echo("Test Info file path: ${inputTest}")
+                    echo("Vystup z seznamu souboru : ${inputTest}")
 
                 }
             }
