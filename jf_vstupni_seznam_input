@@ -59,10 +59,11 @@ pipeline {
                     }
 
                 */
-                
+
             steps {
 
-                // Get the input
+                script {
+                    // Get the input
                     def userInput = input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
@@ -85,7 +86,7 @@ pipeline {
 
                 echo "Tvoje soubory ${vstupni_seznam}"
                 println " vsto z predchoziho krku" + vstup
-                script {
+                
 
                  
                     vstupni_seznam.eachLine { println "$it" }
