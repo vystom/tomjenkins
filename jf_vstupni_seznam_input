@@ -68,11 +68,11 @@ pipeline {
                     def userInput = input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
-                               
+                               /*
                                     string(defaultValue: 'None',
                                             description: 'Path of config file',
                                             name: 'Config'),
-                                
+                                */
                                     
                                     extendedChoice(
                                         name: 'vstupni_seznam', 
@@ -89,12 +89,13 @@ pipeline {
 
                     // Save to variables. Default to empty string if not found.
                    // // inputConfig = userInput.Config?:''
-                    seznam_souboru = userInput.vstupni_seznam?:''
+                    //seznam_souboru = userInput.vstupni_seznam
+                    seznam_souboru = userInput
 
                     // Echo to console
                     // //echo("Vystup z Config: ${inputConfig}")
                     echo("Vystup z seznamu souboru : ${seznam_souboru}")
-                    echo("Vystup z seznamu souboru : ${userInput.vstupni_seznam}")
+                    //echo("Vystup z seznamu souboru : ${userInput.vstupni_seznam}")
                     
                     println " vsto z predchoziho krku" + vstup
 
@@ -111,7 +112,8 @@ pipeline {
 
                     def seznam = []
 		            //str = vstupni_seznam.split(',')
-      		        for( String hodnoty : userInput.vstupni_seznam.split(',')  )
+      		        //for( String hodnoty : userInput.vstupni_seznam.split(',')  )
+                    for( String hodnoty : userInput.vstupni_seznam.split(',')  )
                     seznam << hodnoty
 		   
 		            println "velikost seznamu je "+seznam.size()
