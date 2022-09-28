@@ -66,10 +66,10 @@ pipeline {
                     // Get the input
                     
                     //def userInput 
-                      //  userInput = input(
+                      def  userInput = input(
                         input (
-                            //id: 'userInput', message: 'Vyber soubory ke kopirovani',
-                            message: 'Vyber soubory ke kopirovani',
+                            id: 'userInput', message: 'Vyber soubory ke kopirovani',
+                            //message: 'Vyber soubory ke kopirovani',
                             parameters: [
                                 extendedChoice(
                                     name: 'vstupni_seznam', 
@@ -87,8 +87,8 @@ pipeline {
                     println " vsto z predchoziho krku" + vstup
 
                     //seznam_souboru = userInput.vstupni_seznam?:''
-                    seznam_souboru = ${vstupni_seznam}
-
+                    seznam_souboru = userInput.mame
+                    
                     // Echo to console
                     echo("Vystup ze seznamu souboru : ${seznam_souboru}")
                     //echo("Vystup z seznamu souboru : ${userInput.vstupni_seznam}")
