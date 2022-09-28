@@ -107,7 +107,7 @@ pipeline {
                     //echo "Tvoje soubory ${userInput.vstupni_seznam}"
                 
                 
-                    /*    
+                        
 
                     def seznam = []
 		            //str = vstupni_seznam.split(',')
@@ -123,7 +123,7 @@ pipeline {
    				        println "Soubor[$i]= "+seznam[i]
 		            }
 
-                    */
+                    
                 }    
             }
         
