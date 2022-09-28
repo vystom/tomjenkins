@@ -25,8 +25,8 @@ pipeline {
                 script {
 
                     // Variables for input
-                    def inputConfig
-                    def inputTest
+                    d//ef inputConfig
+                    //def inputTest
 
                     // Get the input
                     def userInput = input(
