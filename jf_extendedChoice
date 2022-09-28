@@ -56,7 +56,7 @@ pipeline {
                     // Echo to console
                     echo("IQA Sheet Path: ${inputConfig}")
                     echo("Vystup z seznamu souboru : ${seznam_souboru}")
-                    echo("Vystup z seznamu souboru : ${vstupni_seznam}")
+                    echo("Vystup z seznamu souboru : ${userInput.vstupni_seznam}")
 
                 }
             }
