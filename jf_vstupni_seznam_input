@@ -38,7 +38,7 @@ pipeline {
         }
 
         stage('Vyber souboru souboru') {
-
+                /*
             input {
                         message "Vyber soubory ke kopirovani"
                         ok 'Pokracuj'
@@ -58,8 +58,29 @@ pipeline {
                         }
                     }
 
-
+                */
+                
             steps {
+
+                // Get the input
+                    def userInput = input(
+                            id: 'userInput', message: 'Vyber soubory ke kopirovani',
+                            parameters: [
+                                    string(defaultValue: 'None',
+                                            description: 'Path of config file',
+                                            name: 'Config'),
+                                    extendedChoice(
+                                        name: 'vstupni_seznam', 
+                                        defaultValue: 'Defaultni hodnota', 
+                                        multiSelectDelimiter: ',', 
+                                        quoteValue: false, 
+                                        saveJSONParameterToFile: false, 
+                                        type: 'PT_MULTI_SELECT',
+                                        //value:'soubor1, soubor2, soubor3, soubor4',
+                                        value: "${vstup}",
+                                        visibleItemCount: 10,
+                                        description: 'Soubory PZ02 ke skopirovani'),
+                            ])
                     
 
                 echo "Tvoje soubory ${vstupni_seznam}"
