@@ -1,10 +1,3 @@
-def vstup 
- 
-def componentsList = "one two three"
-environment {
-    COMPONENTS_LIST = componentsList
-}
-
 
 pipeline {
     agent any
