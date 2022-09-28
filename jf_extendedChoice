@@ -51,7 +51,7 @@ pipeline {
 
                     // Save to variables. Default to empty string if not found.
                     //inputConfig = userInput.Config?:''
-                    seznam_souboru = userInput.vstupni_seznam.collect
+                    seznam_souboru = userInput.vstupni_seznam?:''
                     echo seznam_souboru
                     // Echo to console
                     //echo("Vystup z Config: ${inputConfig}")
