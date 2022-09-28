@@ -65,7 +65,7 @@ pipeline {
                 script {
                     // Get the input
                     
-                    def userInput =[]
+                    def userInput 
                         userInput = input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
@@ -76,8 +76,8 @@ pipeline {
                                     quoteValue: false, 
                                     saveJSONParameterToFile: false, 
                                     type: 'PT_MULTI_SELECT',
-                                    //value:'soubor1, soubor2, soubor3, soubor4',
-                                    value: "${vstup}",
+                                    value:'soubor1, soubor2, soubor3, soubor4',
+                                    //value: "${vstup}",
                                     visibleItemCount: 10,
                                     description: 'Soubory PZ02 ke skopirovani'),
                             ])
