@@ -51,7 +51,7 @@ pipeline {
                                 saveJSONParameterToFile: false, 
                                 type: 'PT_MULTI_SELECT',
                                 //value:'soubor1, soubor2, soubor3, soubor4',
-                                value: "$vstup",
+                                value: '$vstup',
                                 visibleItemCount: 10,
                                 description: 'Soubory PZ02 ke skopirovani'
                             )
