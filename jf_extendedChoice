@@ -29,11 +29,9 @@ pipeline {
                     def inputTest
 
                     // Get the input
-                    //def userInput = input(
-                        input(
+                    def userInput = input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
-
                                     string(defaultValue: 'None',
                                             description: 'Path of config file',
                                             name: 'Config'),
