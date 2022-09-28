@@ -91,7 +91,7 @@ pipeline {
                     seznam_souboru = userInput.vstupni_seznam?:''
 
                     // Echo to console
-                    echo("Vystup z Config: ${inputConfig}")
+                    // //echo("Vystup z Config: ${inputConfig}")
                     echo("Vystup z seznamu souboru : ${seznam_souboru}")
                     echo("Vystup z seznamu souboru : ${userInput.vstupni_seznam}")
                     
