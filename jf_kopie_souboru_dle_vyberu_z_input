@@ -1,0 +1,107 @@
+
+pipeline {
+    agent any
+    stages {
+        stage('Nacteni souboru') {
+            steps {
+                script {
+                    //seznam_souboru()
+                    vstup = sh(script: 'cd /home/tomino/; ls -m maska', returnStdout: true)
+                    echo "vstup je : $vstup"
+                    echo "Kde jsem"
+                    sh "pwd; hostname; users"
+                    //prihlasit se pres klic na server pod sbserv
+                    //nize uveden asi do solo skriptu prel nebo bash
+                   
+                    
+                }
+
+            
+
+              
+
+            }
+        }
+
+        stage('Vyber souboru souboru') {
+            
+            steps {
+
+                script {
+                    // Get the input
+                    
+                    def userInput = input(
+                            id: 'userInput', message: 'Vyber soubory ke kopirovani',
+                            parameters: [
+                               /*
+                                    string(defaultValue: 'None',
+                                            description: 'Path of config file',
+                                            name: 'Config'),
+                                */
+                                    
+                                    extendedChoice(
+                                        name: 'vstupni_seznam', 
+                                        defaultValue: 'Defaultni hodnota', 
+                                        multiSelectDelimiter: ',', 
+                                        quoteValue: false, 
+                                        saveJSONParameterToFile: false, 
+                                        type: 'PT_MULTI_SELECT',
+                                        //value:'soubor1, soubor2, soubor3, soubor4',
+                                        value: "${vstup}",
+                                        visibleItemCount: 10,
+                                        description: 'Soubory PZ02 ke skopirovani')
+                            ])
+
+                    // Save to variables. Default to empty string if not found.
+                   // // inputConfig = userInput.Config?:''
+                    //seznam_souboru = userInput.vstupni_seznam
+                    seznam_souboru = userInput
+
+                    // Echo to console
+                    // //echo("Vystup z Config: ${inputConfig}")
+                    echo("Vystup z seznamu souboru : ${seznam_souboru}")
+                    //echo("Vystup z seznamu souboru : ${userInput.vstupni_seznam}")
+                    
+                    println " vsto z predchoziho krku" + vstup
+
+                    //seznam_souboru = userInput.vstupni_seznam?:''
+                    //seznam_souboru = userInput.mame
+
+                    // Echo to console
+                    //echo("Vystup ze seznamu souboru : ${seznam_souboru}")
+                    //echo("Vystup z seznamu souboru : ${userInput.vstupni_seznam}")
+                    //echo "Tvoje soubory ${userInput.vstupni_seznam}"
+                
+                
+                        
+
+                    def seznam = []
+		            //str = vstupni_seznam.split(',')
+      		        //for( String hodnoty : userInput.vstupni_seznam.split(',')  )
+                    for( String hodnoty : seznam_souboru.split(',')  )
+                    seznam << hodnoty
+		   
+		            println "velikost seznamu je "+seznam.size()
+		            println "seznam0 = " + seznam[0]
+		            println "seznam2 = " + seznam[2]
+		            println "cely seznam = " + seznam
+                
+		  	        for (i = 0; i <seznam.size(); i++) {
+   				        println "Soubor[$i]= "+seznam[i]
+		            }
+
+                    
+                }    
+            }
+        
+        }
+    }
+}
+
+
+currentBuild.displayName = "  ${env.BUILD_ID} -  ${currentBuild.currentResult} "
+/*
+void seznam_souboru() {
+    vstup = sh(script: 'cd /home/tomino/; ls -m SB*', returnStdout: true)
+}
+*/
