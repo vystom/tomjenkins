@@ -76,8 +76,8 @@ pipeline {
                                     quoteValue: false, 
                                     saveJSONParameterToFile: false, 
                                     type: 'PT_MULTI_SELECT',
-                                    value:'soubor1, soubor2, soubor3, soubor4',
-                                    //value: "${vstup}",
+                                    //value:'soubor1, soubor2, soubor3, soubor4',
+                                    value: "${vstup}",
                                     visibleItemCount: 10,
                                     description: 'Soubory PZ02 ke skopirovani'),
                             ])
@@ -85,7 +85,7 @@ pipeline {
                     println " vsto z predchoziho krku" + vstup
 
                     //seznam_souboru = userInput.vstupni_seznam?:''
-                    seznam_souboru = userInput.vstupni_seznam
+                    seznam_souboru = vstupni_seznam
 
                     // Echo to console
                     echo("Vystup ze seznamu souboru : ${seznam_souboru}")
