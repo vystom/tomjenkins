@@ -65,32 +65,41 @@ pipeline {
                 script {
                     // Get the input
                     
-                    //def userInput 
-                      def  userInput = input(
-                        input (
+                    /def userInput = input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
-                            //message: 'Vyber soubory ke kopirovani',
                             parameters: [
-                                extendedChoice(
-                                    name: 'vstupni_seznam', 
-                                    defaultValue: 'Defaultni hodnota', 
-                                    multiSelectDelimiter: ',', 
-                                    quoteValue: false, 
-                                    saveJSONParameterToFile: false, 
-                                    type: 'PT_MULTI_SELECT',
-                                    //value:'soubor1, soubor2, soubor3, soubor4',
-                                    value: "${vstup}",
-                                    visibleItemCount: 10,
-                                    description: 'Soubory PZ02 ke skopirovani'),
+                                    string(defaultValue: 'None',
+                                            description: 'Path of config file',
+                                            name: 'Config'),
+                                    extendedChoice(
+                                        name: 'vstupni_seznam', 
+                                        defaultValue: 'Defaultni hodnota', 
+                                        multiSelectDelimiter: ',', 
+                                        quoteValue: false, 
+                                        saveJSONParameterToFile: false, 
+                                        type: 'PT_MULTI_SELECT',
+                                        //value:'soubor1, soubor2, soubor3, soubor4',
+                                        value: "${vstup}",
+                                        visibleItemCount: 10,
+                                        description: 'Soubory PZ02 ke skopirovani'),
                             ])
+
+                    // Save to variables. Default to empty string if not found.
+                    inputConfig = userInput.Config?:''
+                    seznam_souboru = userInput.vstupni_seznam?:''
+
+                    // Echo to console
+                    echo("Vystup z Config: ${inputConfig}")
+                    echo("Vystup z seznamu souboru : ${seznam_souboru}")
+                    echo("Vystup z seznamu souboru : ${userInput.vstupni_seznam}")
                     
                     println " vsto z predchoziho krku" + vstup
 
                     //seznam_souboru = userInput.vstupni_seznam?:''
-                    seznam_souboru = userInput.mame
-                    
+                    //seznam_souboru = userInput.mame
+
                     // Echo to console
-                    echo("Vystup ze seznamu souboru : ${seznam_souboru}")
+                    //echo("Vystup ze seznamu souboru : ${seznam_souboru}")
                     //echo("Vystup z seznamu souboru : ${userInput.vstupni_seznam}")
                     //echo "Tvoje soubory ${userInput.vstupni_seznam}"
                 
