@@ -13,9 +13,9 @@ pipeline {
                             extendedChoice (description: 'Components', multiSelectDelimiter: ',', 
                             name: 'Components_To_Deploy', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_MULTI_SELECT', 
                             value: "${COMPONENTS_LIST}", visibleItemCount: 3)
-                            )
                         ])
                     ])
+                    
                 }
             }
         }
