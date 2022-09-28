@@ -32,9 +32,10 @@ pipeline {
                     def userInput = input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
-                                    string(defaultValue: 'None',
+                                 /*   string(defaultValue: 'None',
                                             description: 'Path of config file',
                                             name: 'Config'),
+                                 */
                                     extendedChoice(
                                         name: 'vstupni_seznam', 
                                         defaultValue: 'Defaultni hodnota', 
@@ -49,11 +50,11 @@ pipeline {
                             ])
 
                     // Save to variables. Default to empty string if not found.
-                    inputConfig = userInput.Config?:''
+                    //inputConfig = userInput.Config?:''
                     seznam_souboru = userInput.vstupni_seznam?:''
 
                     // Echo to console
-                    echo("Vystup z Config: ${inputConfig}")
+                    //echo("Vystup z Config: ${inputConfig}")
                     echo("Vystup z seznamu souboru : ${seznam_souboru}")
                     echo("Vystup z seznamu souboru : ${userInput.vstupni_seznam}")
 
