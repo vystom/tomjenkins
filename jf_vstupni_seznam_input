@@ -87,7 +87,7 @@ pipeline {
                             ])
 
                     // Save to variables. Default to empty string if not found.
-                    inputConfig = userInput.Config?:''
+                   // // inputConfig = userInput.Config?:''
                     seznam_souboru = userInput.vstupni_seznam?:''
 
                     // Echo to console
