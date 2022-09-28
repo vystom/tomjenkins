@@ -29,7 +29,8 @@ pipeline {
                     def inputTest
 
                     // Get the input
-                    def userInput = input(
+                    //def userInput = input(
+                        input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
 
