@@ -68,12 +68,12 @@ pipeline {
                     def userInput = input(
                             id: 'userInput', message: 'Vyber soubory ke kopirovani',
                             parameters: [
-                               /*
+                               
                                     string(defaultValue: 'None',
                                             description: 'Path of config file',
                                             name: 'Config'),
-                                */ 
-                                    ,
+                                
+                                    
                                     extendedChoice(
                                         name: 'vstupni_seznam', 
                                         defaultValue: 'Defaultni hodnota', 
