@@ -13,15 +13,16 @@ pipeline {
 
                         //export SSH_OPTS="-o StrictHostKeyChecking=no -o ConnectTimeout=60 -q"
                         //sh " ssh -i ${klic} sbserv@jesenice"
+                        sh "ssh -i /home/tomino/.ssh/id_rsa sbserv@tomino-OptiPlex-7010"
                         sh "echo ${USER}"
 
-
-                        sshagent(credentials : ['tomino_ssh']) {
+/*
+             sshagent(credentials : ['tomino_ssh']) {
             //sh 'ssh -o StrictHostKeyChecking=no user@hostname.com uptime'
             sh 'ssh -v sbserv@jesenice'
             //sh 'scp ./source/filename user@hostname.com:/remotehost/target'
         }
-
+*/
 
                     }
 
