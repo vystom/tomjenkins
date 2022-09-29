@@ -12,26 +12,14 @@ pipeline {
                         //sh "scp -i $klic sbserv@jesenice:/home/sbserv/stahnime.txt ./"
 
                         SSH_OPTS="-o StrictHostKeyChecking=no -o ConnectTimeout=60 -q"
-                        //sh " ssh -i ${klic} sbserv@jesenice"
-                        //sh "ssh -o StrictHostKeyChecking=no"
-                        sh "ssh  ${SSH_OPTS} -v -i $klic sbserv@tomino-OptiPlex-7010"
+                        //sh "ssh  ${SSH_OPTS} -i $klic sbserv@tomino-OptiPlex-7010"
+                        //sh "scp -i $klic sbserv@jesenice:/home/sbserv/stahnime.txt ./"
+
                         sh "echo ${USER}"
-
-/*
-             sshagent(credentials : ['tomino_ssh']) {
-            //sh 'ssh -o StrictHostKeyChecking=no user@hostname.com uptime'
-            sh 'ssh -v sbserv@jesenice'
-            //sh 'scp ./source/filename user@hostname.com:/remotehost/target'
-        }
-*/
-
-                    }
-
-// withCredentials([sshUserPrivateKey(credentialsId: 'weblogic-test_forms', keyFileVariable: 'ssh_key', passphraseVariable: '', usernameVariable: 'ssh_user')]) {
 
 
                     //seznam_souboru()
-                    vstup = sh(script: 'cd /home/sbserv/; ls -m $maska', returnStdout: true)
+                    vstup = sh(script: 'cd /home/sbserv/; ls -m $maska', returnStdout: true)  //VYSTUP SKRIPTU DO PROMENNE!!!!
                     echo "vstup je : $vstup"
                     echo "Kde jsem"
                     sh "pwd; hostname; users"
