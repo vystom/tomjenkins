@@ -11,10 +11,10 @@ pipeline {
                         //sh "scp -i ${klic} sbserv@jesenice:/home/sbserv/stahnime.txt ./"
                         //sh "scp -i $klic sbserv@jesenice:/home/sbserv/stahnime.txt ./"
 
-                        //export SSH_OPTS="-o StrictHostKeyChecking=no -o ConnectTimeout=60 -q"
+                        SSH_OPTS="-o StrictHostKeyChecking=no -o ConnectTimeout=60 -q"
                         //sh " ssh -i ${klic} sbserv@jesenice"
-                        sh "ssh -o StrictHostKeyChecking=no"
-                        sh "ssh -v -i $klic sbserv@tomino-OptiPlex-7010"
+                        //sh "ssh -o StrictHostKeyChecking=no"
+                        sh "ssh  ${SSH_OPTS} -v -i $klic sbserv@tomino-OptiPlex-7010"
                         sh "echo ${USER}"
 
 /*
