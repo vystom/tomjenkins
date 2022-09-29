@@ -12,8 +12,10 @@ pipeline {
                         //sh "scp -i $klic sbserv@jesenice:/home/sbserv/stahnime.txt ./"
 
                         //export SSH_OPTS="-o StrictHostKeyChecking=no -o ConnectTimeout=60 -q"
-                        ssh "-i ${klic} sbserv@jesenice"
+                        sh " ssh -i ${klic} sbserv@jesenice"
                         sh "echo ${USER}"
+
+
                     }
 
 // withCredentials([sshUserPrivateKey(credentialsId: 'weblogic-test_forms', keyFileVariable: 'ssh_key', passphraseVariable: '', usernameVariable: 'ssh_user')]) {
