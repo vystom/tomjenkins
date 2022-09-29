@@ -6,10 +6,12 @@ pipeline {
             steps {
                 script {
 
-                    withCredentials([sshUserPrivateKey(credentialsId: "tomino_ssh", keyFileVariable: 'klic')]) {
+                    withCredentials([sshUserPrivateKey(credentialsId: "tomino_ssh", keyFileVariable: 'klic', assphraseVariable: '', usernameVariable: 'ssh_user')]) {
                         //sh "scp -i ${klic} sbserv@jesenice:/home/sbserv/stahnime.txt ./"
                         sh "scp -i $klic sbserv@jesenice:/home/sbserv/stahnime.txt ./"
                     }
+
+// withCredentials([sshUserPrivateKey(credentialsId: 'weblogic-test_forms', keyFileVariable: 'ssh_key', passphraseVariable: '', usernameVariable: 'ssh_user')]) {
 
 
                     //seznam_souboru()
