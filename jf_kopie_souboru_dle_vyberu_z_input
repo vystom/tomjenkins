@@ -27,12 +27,8 @@ pipeline {
                     //nize uveden asi do solo skriptu prel nebo bash
                    
                     
+                    }
                 }
-
-            
-
-              
-
             }
         }
 
