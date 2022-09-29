@@ -7,7 +7,8 @@ pipeline {
                 script {
 
                     withCredentials([sshUserPrivateKey(credentialsId: "tomino_ssh", keyFileVariable: 'klic')]) {
-                        sh "scp -i ${klic} sbserv@jesenice:/home/sbserv/stahnime.txt ./"
+                        //sh "scp -i ${klic} sbserv@jesenice:/home/sbserv/stahnime.txt ./"
+                        sh "scp -i $klic sbserv@jesenice:/home/sbserv/stahnime.txt ./"
                     }
 
 
