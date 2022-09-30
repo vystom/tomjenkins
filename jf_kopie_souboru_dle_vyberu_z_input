@@ -1,4 +1,7 @@
 
+def klic
+def SSH_OPTS
+
 pipeline {
     agent any
     stages {
