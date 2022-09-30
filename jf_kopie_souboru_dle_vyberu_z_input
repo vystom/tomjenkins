@@ -33,7 +33,7 @@ pipeline {
                     }
                 }
             }
-        }
+        
 
         stage('Vyber souboru souboru') {
             
@@ -106,10 +106,10 @@ pipeline {
                     
                 }    
             }
-        
         }
     }
-}
+}   
+
 
 
 currentBuild.displayName = "  ${env.BUILD_ID} -  ${currentBuild.currentResult} "
