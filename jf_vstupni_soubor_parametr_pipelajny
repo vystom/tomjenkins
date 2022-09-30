@@ -1,14 +1,12 @@
 pipeline {
   agent any
-  parameters {
-    file 'THEFILE'
-  }
+  
   stages {
     stage('Example') {
       steps {
-        withFileParameter('THEFILE') {
-          sh 'cat $THEFILE'
-        }
+        echo "clent.txt=${client.txt}"      
+          // sh 'cat $THEFILE'
+        
       }
     }
   }
