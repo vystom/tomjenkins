@@ -1,5 +1,5 @@
 
-def klic
+
 def SSH_OPTS
 
 pipeline {
@@ -22,6 +22,7 @@ pipeline {
 
                         sh "echo ${USER}"
 
+                        def klic2=$klic
 
                     //seznam_souboru()
                     vstup = sh(script: 'cd /home/sbserv/; ls -m $maska', returnStdout: true)  //VYSTUP SKRIPTU DO PROMENNE!!!!
@@ -94,7 +95,7 @@ pipeline {
                         //kopiruji
                         println "Kopiruji ..."
                         println "z /home/sbserv/"+seznam[i] + "do /home/tomino/PZ02/"+seznam[i] 
-                        sh "scp ${SSH_OPTS} -i $klic sbserv@jesenice:/home/sbserv/${seznam[i]} /home/tomino/PZ02/"
+                        sh "scp ${SSH_OPTS} -i $klic2 sbserv@jesenice:/home/sbserv/${seznam[i]} /home/tomino/PZ02/"
 		            }
 
                     
