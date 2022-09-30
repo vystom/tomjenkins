@@ -7,7 +7,7 @@ pipeline {
         //echo "clent.txt="+${client.txt}"      
           // sh 'cat $THEFILE'
 
-        sh "echo $FILE | base64 -d"
+        sh "echo ${FILE} | base64 -d"
 
       }
 
