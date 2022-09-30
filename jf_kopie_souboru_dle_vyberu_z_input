@@ -13,7 +13,7 @@ pipeline {
 
                         SSH_OPTS="-o StrictHostKeyChecking=no -o ConnectTimeout=60 -q"
                         //sh "ssh  ${SSH_OPTS} -i $klic sbserv@tomino-OptiPlex-7010 "
-                        sh "scp ${SSH_OPTS} -i $klic tomino@jesenice:/home/sbserv/stahnime.txt /home/tomino"
+                        sh "scp ${SSH_OPTS} -i $klic sbserv@jesenice:/home/sbserv/stahnime.txt /home/tomino"
 
                         sh "echo ${USER}"
 
