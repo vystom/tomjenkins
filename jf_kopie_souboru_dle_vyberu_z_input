@@ -22,7 +22,7 @@ pipeline {
 
                         sh "echo ${USER}"
 
-                        def klic2=$klic
+                        def klic2=klic
 
                     //seznam_souboru()
                     vstup = sh(script: 'cd /home/sbserv/; ls -m $maska', returnStdout: true)  //VYSTUP SKRIPTU DO PROMENNE!!!!
