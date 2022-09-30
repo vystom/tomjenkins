@@ -16,7 +16,7 @@ pipeline {
                         sh "scp ${SSH_OPTS} -i $klic sbserv@jesenice:/home/sbserv/stahnime.txt /home/tomino"
 
                         sh "echo ${USER}"
-
+//test
 
                     //seznam_souboru()
                     vstup = sh(script: 'cd /home/sbserv/; ls -m $maska', returnStdout: true)  //VYSTUP SKRIPTU DO PROMENNE!!!!
