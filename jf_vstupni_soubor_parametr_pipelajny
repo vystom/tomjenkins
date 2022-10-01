@@ -16,6 +16,12 @@ pipeline {
                script {
                    def data = readFile(file: 'zorg.txt')
                    println(data)
+                
+                    for (i = 0; i <seznam.size(); i++) {
+   				        println "data[$i]= "+data[i]
+
+                    }
+
                }
            }
        }
