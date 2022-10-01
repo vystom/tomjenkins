@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Example') {
       steps {
-        echo "jmeno=" + $PARAM_NAME
+        sh "workspace = ${WORKSPACE}"
+        sh "ls la"
       }
     }
   }
