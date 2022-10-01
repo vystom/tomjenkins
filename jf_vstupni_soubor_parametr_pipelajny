@@ -17,10 +17,11 @@ pipeline {
                    def data = readFile(file: 'zorg.txt')
                    println(data)
                 
-                    for (i = 0; i <data.size(); i++) {
-   				        println "data[$i]= "+data[i]
-
-                    }
+                    def list = readFile("zorg.txt").readLines()
+                    for(item in list){
+                        print item
+                      //  bat('type '+item) win 
+                    }  
 
                }
            }
