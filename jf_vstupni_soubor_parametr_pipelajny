@@ -1,3 +1,19 @@
-node {
-    sh "echo ${client.txt} | base64 -d"
+parameters{
+        file name:'client.txt', description:'vloz client.txt'
+   }
+
+
+
+pipeline {
+    agent any
+    stages {
+        stage('Nacteni souboru') {
+            steps {
+                script {
+                    def myfile = readFile('client.txt')
+                    echo "${myfile}"
+                }
+            }
+        }
+    }
 }
