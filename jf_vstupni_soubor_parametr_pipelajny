@@ -28,7 +28,7 @@ pipeline {
                       //  bat('type '+item) win 
                     }  
 
-                    println "velikost pole je: " + r.size
+                    println "velikost pole je: " + r.size()
                     for (b = 0; b < r.size(); b++) {
    				        println "redek[$b]= "+r[b]
                     }
