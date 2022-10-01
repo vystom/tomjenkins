@@ -3,8 +3,11 @@ pipeline {
   stages {
     stage('Example') {
       steps {
-        sh "workspace = ${WORKSPACE}"
-        sh "ls la"
+        script{
+          sh "ls -la"
+          sh "workspace = ${WORKSPACE}"
+          
+        }
       }
     }
   }
