@@ -1,3 +1,5 @@
+library "file-workaround"
+
 pipeline {
   agent any
   stages {
@@ -8,12 +10,13 @@ pipeline {
           sh "echo pracprostor = ${WORKSPACE}"
           sh "echo jenkins home = ${JENKINS_HOME}"
           sh "echo ${JENKINS_HOME} - jobs - ${JOB_NAME} - builds - ${BUILD_ID} "
-          
-          withFileParameter('client.txt') {
-            sh 'cat $client.txt'
-          }
 
-          
+         
+
+    def file_in_workspace = unstashParam "myFile"
+    sh "cat ${file_in_workspace}"
+ 
+                    
         }
       }
     }
