@@ -27,8 +27,8 @@ pipeline {
                       //  bat('type '+item) win 
                     }  
 
-                    for (i = 0; i <r.size(); i++) {
-   				        println "redek[$i]= "+r[i]
+                    for (b = 0; b <r.size(); b++) {
+   				        println "redek[$b]= "+r[b]
                     }
 
                }
