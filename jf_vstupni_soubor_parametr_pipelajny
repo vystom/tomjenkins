@@ -8,7 +8,11 @@ pipeline {
           sh "echo pracprostor = ${WORKSPACE}"
           sh "echo jenkins home = ${JENKINS_HOME}"
           sh "echo ${JENKINS_HOME} - jobs - ${JOB_NAME} - builds - ${BUILD_ID} "
-          sh "echo paramNameDefined = ${paramNameDefined}"
+          
+          withFileParameter('client.txt') {
+            sh 'cat $client.txt'
+          }
+
           
         }
       }
