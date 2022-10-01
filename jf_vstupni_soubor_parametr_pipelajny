@@ -17,6 +17,7 @@ pipeline {
                    def data = readFile(file: 'zorg.txt')
                    println(data)
                     
+                    def r = []
                     def i=0
                     def list = readFile("zorg.txt").readLines()
                     for(item in list){
