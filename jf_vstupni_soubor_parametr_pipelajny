@@ -10,6 +10,11 @@ pipeline {
         stage('Nacteni souboru') {
             steps {
                 script {
+
+                    def inputFile = input message: 'Upload file', parameters: [file(name: 'client.txt')]   
+
+
+
                     def myfile = readFile('client.txt')
                     echo "${myfile}"
                 }
