@@ -5,7 +5,7 @@ pipeline {
       steps {
         script{
           sh "ls -la"
-          sh "pracprostor = ${WORKSPACE}"
+          sh "echo pracprostor = ${WORKSPACE}"
           
         }
       }
