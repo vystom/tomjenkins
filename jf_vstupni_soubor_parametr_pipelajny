@@ -23,6 +23,7 @@ pipeline {
                     for(item in list){
                         print item
                         r[i]=item
+                        println "redek[$i]= "+r[i]
                         i=i+0
                       //  bat('type '+item) win 
                     }  
