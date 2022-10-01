@@ -24,7 +24,7 @@ pipeline {
                         print item
                         r[i]=item
                         println "redek[$i]= "+r[i]
-                        i=i+0
+                        i=i+1
                       //  bat('type '+item) win 
                     }  
 
